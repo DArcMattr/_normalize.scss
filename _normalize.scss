@@ -264,6 +264,11 @@ menu, ol, ul {
   @include rem( padding, 0 0 0 1.2rem );
 }
 
+li {
+  @include rem( margin, 1.2rem 0 );
+}
+
+
 /*
  * Corrects list images handled incorrectly in IE7.
  */
