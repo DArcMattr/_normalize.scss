@@ -253,14 +253,16 @@ dl, menu, ol, ul {
 }
 
 dd {
-  margin: 0 0 0 40px; }
+  @include rem( margin, 0 0 0 1.2rem );
+}
 
 /*
  * Addresses paddings set differently in IE6/7.
  */
 
 menu, ol, ul {
-  padding: 0 0 0 40px; }
+  @include rem( padding, 0 0 0 1.2rem );
+}
 
 /*
  * Corrects list images handled incorrectly in IE7.
@@ -269,7 +271,9 @@ menu, ol, ul {
 nav {
   ul, ol {
     list-style: none;
-    list-style-image: none; } }
+    list-style-image: none;
+  }
+}
 
 /* ==========================================================================
    Embedded content
