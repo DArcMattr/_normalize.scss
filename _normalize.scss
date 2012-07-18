@@ -109,7 +109,7 @@ a {
 h1 {
   @include rem( font-size, 2rem );
   @include rem( line-height, 2.4rem );
-  @include rem( margin, 1.2rem 0 );
+  @include rem( margin, 1.2rem 0 2.4rem );
 }
 
 h2 {
