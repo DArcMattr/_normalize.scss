@@ -403,11 +403,18 @@ button, input {
  * 4. Removes inner spacing in IE7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE6.
  */
+.pointy {
+  cursor: pointer;
+}
+
+label {
+  @extend .pointy;
+}
 
 button, html input[type="button"] {
   -webkit-appearance: button;
   /* 2 */
-  cursor: pointer;
+  @extend .pointy;
   /* 3 */
   *overflow: visible;
   /* 4 */ }
@@ -416,7 +423,7 @@ input {
   &[type="reset"], &[type="submit"] {
     -webkit-appearance: button;
     /* 2 */
-    cursor: pointer;
+    @extend .pointy;
     /* 3 */
     *overflow: visible;
     /* 4 */ } }
