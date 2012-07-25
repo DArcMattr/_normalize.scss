@@ -68,8 +68,12 @@ html {
  * elements.
  */
 
-button, input, select, textarea {
+button, input[type=submit], select {
   font-family: sans-serif; }
+
+input, textarea {
+  font-family: monospace;
+}
 
 /*
  * Addresses margins handled incorrectly in IE6/7.
