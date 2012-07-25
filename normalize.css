@@ -56,11 +56,8 @@ html {
  * Addresses `font-family` inconsistency between `textarea` and other form
  * elements.
  */
-button, input[type=submit], select {
+button, input, select, textarea {
   font-family: sans-serif; }
-
-input, textarea {
-  font-family: monospace; }
 
 /*
  * Addresses margins handled incorrectly in IE6/7.
@@ -78,12 +75,6 @@ a:focus {
   outline: thin dotted; }
 a:active, a:hover {
   outline: 0; }
-a[href$=pdf] {
-  padding-right: 19.2px;
-  padding-right: 1.2rem;
-  background-image: url(/lib_style/img/icon_pdf.png);
-  background-position: 100% 0%;
-  background-repeat: no-repeat; }
 
 /*
  * Improves readability when focused and also mouse hovered in all browsers.
@@ -101,8 +92,8 @@ h1 {
   font-size: 2rem;
   line-height: 38.4px;
   line-height: 2.4rem;
-  margin: 19.2px 0 38.4px;
-  margin: 1.2rem 0 2.4rem; }
+  margin: 19.2px 0;
+  margin: 1.2rem 0; }
 
 h2 {
   font-size: 24px;
@@ -372,12 +363,10 @@ button, input {
  * 4. Removes inner spacing in IE7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE6.
  */
-.pointy, label, button, html input[type="button"], input[type="reset"], input[type="submit"] {
-  cursor: pointer; }
-
 button, html input[type="button"] {
   -webkit-appearance: button;
   /* 2 */
+  cursor: pointer;
   /* 3 */
   *overflow: visible;
   /* 4 */ }
@@ -385,6 +374,7 @@ button, html input[type="button"] {
 input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
+  cursor: pointer;
   /* 3 */
   *overflow: visible;
   /* 4 */ }
