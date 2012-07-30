@@ -98,10 +98,21 @@ a {
     outline: 0;
   }
   &[href$=pdf] {
-    @include rem( padding-right, 1.2rem );
-    background-image: url(/lib_style/img/icon_pdf.png);
-    background-position: 100% 0%;
-    background-repeat: no-repeat;
+    position: relative;
+    @include rem( padding-right, 1.063rem );
+    &:after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      @include rem( height, 1.063rem );
+      @include rem( width,  1.063rem );
+      padding: 0;
+      margin: 0;
+      background-image: url(/lib_style/img/icon_pdf.png);
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
   }
 }
 
@@ -305,6 +316,11 @@ li {
   @include rem( margin, 1.2rem 0 );
 }
 
+nav {
+  li {
+    margin: 0;
+  }
+}
 
 /*
  * Corrects list images handled incorrectly in IE7.
