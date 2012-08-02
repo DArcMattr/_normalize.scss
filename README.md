@@ -1,10 +1,11 @@
-normalize.css
-=============
+\_normalize.scss
+===============
 
-Normalize.css is a customisable CSS file that makes browsers render all
-elements more consistently and in line with modern standards. We researched the
-differences between default browser styles in order to precisely target only
-the styles that need normalizing.
+\_Normalize.scss is a customisable SASS file that makes browsers render all
+elements more consistently and in line with modern standards--derived from
+Necolas' Normalize.css project. It is the result of researching the differences
+between default browser styles in order to precisely target only the styles
+that need normalizing.
 
 [Check out the demo](http://necolas.github.com/normalize.css/demo.html)
 
@@ -20,7 +21,7 @@ What does it do?
 How to use it
 -----------
 
-Normalize.css is intended to be used as an alternative to CSS resets.
+`\_normalize.scss` is intended to be used as an alternative to CSS resets.
 
 It's suggested that you read the `normalize.css` file and consider customising
 it to meet your needs. Alternatively, include the file in your project and
@@ -38,8 +39,7 @@ Browser support
 Contribute
 -----------
 
-Please read my [issue
-guidelines](https://github.com/necolas/issue-guidelines).
+Please read my [issue guidelines](https://github.com/necolas/issue-guidelines).
 
 License
 -----------
