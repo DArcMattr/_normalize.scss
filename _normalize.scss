@@ -5,6 +5,7 @@
    ========================================================================== */
 @import "sizing";
 $text-color: #333 !default;
+$background-color: #ccc !default;
 
 /* ==========================================================================
    HTML5 display definitions
@@ -168,7 +169,7 @@ blockquote {
   @include rem( margin, 1.2rem 0 );
   @include rem( padding, 0 0 0 .6rem);
   border: 0;
-  @include rem( border-left, .6rem solid $text-color );
+  @include rem( border-left, .6rem solid $background-color );
 }
 
 /*
@@ -494,4 +495,8 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+iframe {
+  border: 0;
 }
