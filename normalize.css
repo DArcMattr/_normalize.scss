@@ -168,8 +168,8 @@ blockquote {
   padding: 0 0 0 9.6px;
   padding: 0 0 0 0.6rem;
   border: 0;
-  border-left: 9.6px solid #333333;
-  border-left: 0.6rem solid #333333; }
+  border-left: 9.6px solid #cccccc;
+  border-left: 0.6rem solid #cccccc; }
 
 /*
  * Addresses styling not present in IE 6/7/8/9.
@@ -456,3 +456,6 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+iframe {
+  border: 0; }
