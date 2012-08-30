@@ -264,8 +264,12 @@ dl, menu, ol, ul {
   @include rem( margin, 1.2rem 0 );
 }
 
+dt {
+
+}
+
 dd {
-  @include rem( margin, 0 0 0 1.2rem );
+  @include rem( margin, 0 0 1.2rem 1.2rem );
 }
 
 /*
@@ -274,6 +278,7 @@ dd {
 
 menu, ol, ul {
   list-style-position: outside;
+
   @include rem( padding, 0 0 0 1.2rem );
 }
 
