@@ -1,6 +1,6 @@
-# `\_normalize.scss` v1.0.0
+# `_normalize.scss` v1.0.0
 
-`\_normalize.scss` is a customisable SASS file that makes browsers render all
+`_normalize.scss` is a customisable SASS file that makes browsers render all
 elements more consistently and in line with modern standards--derived from
 Nicholas Gallagher's Normalize.css project. It is the result of researching the
 differences between default browser styles in order to precisely target only
@@ -18,7 +18,7 @@ the styles that need normalizing.
 
 ## How to use it
 
-I intend `\_normalize.scss` to be used as a declaration of many default styles
+I intend `_normalize.scss` to be used as a declaration of many default styles
 that I use in Ayn Rand Institute web projects, and for working around many
 browser quirks. It has been adapted for use as an `@import` into a site's
 stylesheet, and compiled in using [Compass](http://compass-style.org). A
