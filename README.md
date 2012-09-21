@@ -1,4 +1,4 @@
-# `_normalize.scss` v1.0.0
+# `_normalize.scss` v1.0.1
 
 `_normalize.scss` is a customisable SASS file that makes browsers render all
 elements more consistently and in line with modern standards--derived from
@@ -35,11 +35,14 @@ override the defaults later in your CSS.
 
 ## Browser support
 
+I am tracking the v1 series, because I want to keep some old browser support
+around, these old browsers include:
+
 * Google Chrome
-* Mozilla Firefox 3+
-* Apple Safari 4+
+* Mozilla Firefox 3+ (the Long-Term Support release of Firefox is based on v3)
+* Apple Safari 4+ (because some people haven't upgraded their iOS version)
 * Opera 10+
-* Internet Explorer 6+
+* Internet Explorer 6+ (better in here than in my main CSS files)
 
 ## Contribute
 
@@ -52,4 +55,7 @@ of those is a "public" problem (hint, it's upstream).
 ## Acknowledgements
 
 `_normalize.css` is derived from Normalize.css, which is a project by [Nicolas
-Gallagher](http://github.com/necolas) and [Jonathan Neal](http://github.com/jonathantneal).
+Gallagher][] and [Jonathan Neal][].
+
+[Jonathan Neal]: http://github.com/jonathantneal
+[Nicolas Gallagher]: http://github.com/necolas
