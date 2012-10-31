@@ -125,8 +125,8 @@ h2 {
   margin: 1.2rem 0; }
 
 h3 {
-  font-size: 18.667px;
-  font-size: 1.167rem;
+  font-size: 18.66672px;
+  font-size: 1.16667rem;
   line-height: 38.4px;
   line-height: 2.4rem;
   margin: 19.2px 0;
@@ -141,8 +141,8 @@ h4 {
   margin: 1.2rem 0; }
 
 h5 {
-  font-size: 13.333px;
-  font-size: 0.833rem;
+  font-size: 13.33328px;
+  font-size: 0.83333rem;
   line-height: 38.4px;
   line-height: 2.4rem;
   margin: 19.2px 0;
@@ -336,12 +336,16 @@ legend {
   white-space: normal;
   /* 2 */
   *margin-left: -7px;
-  /* 3 */ }
+  /* 3 */
+  display: table;
+  /* 4 */ }
 
 /*
  * 1. Corrects font size not being inherited in all browsers.
  * 2. Addresses margins set differently in IE 6/7, Firefox 3+, Safari 5, Chrome.
  * 3. Improves appearance and consistency in all browsers.
+ * 4. Enable line-wrapping in IE8+, from
+ *      http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
  */
 button, input, select, textarea {
   font-size: 100%;

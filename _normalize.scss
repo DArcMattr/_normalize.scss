@@ -378,12 +378,14 @@ legend {
   padding: 0;
   white-space: normal; /* 2 */
   *margin-left: -7px;  /* 3 */
+  display:table;       /* 4 */
 }
-
 /*
  * 1. Corrects font size not being inherited in all browsers.
  * 2. Addresses margins set differently in IE 6/7, Firefox 3+, Safari 5, Chrome.
  * 3. Improves appearance and consistency in all browsers.
+ * 4. Enable line-wrapping in IE8+, from
+ *      http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
  */
 button, input, select, textarea {
   font-size: 100%;          /* 1 */
