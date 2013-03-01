@@ -4,6 +4,7 @@
    Mixins
    ========================================================================== */
 @import "sizing";
+@import "compass";
 $text-color: #333 !default;
 $background-color: #ccc !default;
 
@@ -101,7 +102,7 @@ a {
       @include rem( width,  1.063rem );
       padding: 0;
       margin: 0;
-      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAMAAAAMs7fIAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGxQTFRF////8PDwwMDAe3x8paWmhQ8UnYOE7Rwk6ExSsRUbzxgfWAoNdg4SOwcJ3N3ebm5v8lVb4URL2z5E6ygv6UBG5XB15HyB4Kyv5mRp4pSY3dDS37i73sTG51he44iMb2Jjp42PU0ZHcj5ANzc32/NifwAAAAF0Uk5TAEDm2GYAAAABYktHRACIBR1IAAAACXBIWXMAAABIAAAASABGyWs+AAAAe0lEQVQY043OyxqCIBCA0XFEnS6OmkSAlrf3f0cJLaFV/4KPOYsBAEjwCHyYir00y91cHJE4nfMklsu1xEiYuUKo6+ZGrlbSfRO3Wbgbq8f7DEX/I+ZHLJGNRZmO+lDss1NaFlJ/xGr/eP+iYRPjPxdsHiVxLNNcfVtwBdPrC9ktDOFPAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTE5VDIyOjI0OjEyLTA3OjAwhMR61wAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMi0wMS0yMVQwMDoyNDoyNS0wODowMNq1VW4AAAAASUVORK5CYII=);
+      background-image: url('data:png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQA5LzExLzA24EiMeQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAATOSURBVFiF5ZddbJNVGMd/b/u+sG5dW8d0H+4L2UcGKUOjUBkD0QsVCSHGCSZEyIzGi92RyI3gBQYuIF440USYCULMdMEAGhMCKJZsZJAY2AfsI0Sy4bplG9LOvu3bt32PF9C69Wudwyv/ydNzznM+/v/znHOevIX/O6QMx1k8Ho8qhEAIARArASRJQpKkWXXDMNB1/afy8vKtgJ5SwOmldSJV50Lw9KWz+P1+rFarr6WlpfLQoUMTycbJQWGQXVg4y7nkmToApn67EWsHPGOonvGMyNWxMQzDwOv1Ultba2tubr4NLEsmQjpetkIskkyznNvvdANw/9YAP29r4vXuDgB+P3WWrt0fxvoB2ipWJggICYOGSz8wPj6Oy+UCYGRkZLqsrGwJccdh0oRBGDHLAE5WOJm+O0pl0w4Azm9v4gnXs5S/sSXWf7LCmTA3jEATRuxORFFaWpo7NDR0FZBnCQgaBroQswxg8ZPF5JQUE/T5ALh75SpD7aexlBQDsONODzvu9CTM1YUgaBgPwhsnorKyclV/f/9nQCzksiYMFgsjIYyNHefo/eoE148dZ/W+PejCoMD1HAPtpwH4cdsuAPQkc6MRUBSF9vZ2RkdHURSFqqoqXC7XuwMDAxdqampOAcIUEoJwnAF8XlqL+6MDsfZ7wzeZ6LvFze++B2C4s4vhzq6EuWEhCAmBJEnk5uaSnZ1NTk4Ouq5z7do1WltbTXa7fT+gAEj7Cp8SeWYlYRczUfL8aib6+tEeHsdcuBfReafrF7KyslBVFU3TCIVCBAIBNE0jPz+f5cuXPw5MyiHDYMzQ0i445r6cEfFMRI/A4XDE2pFIhGAwiNlsBrABk/IX2p9lgCXdYpqmVbjd7nPwIAPGXy5JkgisqUeqqkTe/Bq2pl3IspyQHRVFQVGUqF+O/kwS9zTiEQ6HcwoKCtLudkqAZdMmzMXFWPPyZhIlTdVRyF6vN5CO/CH8Vqs1rQBfbi7i/EWsBz/GYrHE/PFlvABT4nKpSdKZcDrx9fZhctjnHDsTCxZgMpmQJIlFDfVoSGStdM4p4D+JQASJIBKT33w7LwGZfg9Ue73egWSiougsqcLssGEAa65cQrbbk96BaJmVlVUDDD6SCNw+eJgAEivaTuC/P03fB3szjkDa55dqtzPbutfL4JGjLGt+H3udkzXnzuB+eSsTro2s2LsHgHvdfSh2G0Ub1pFX51y4gJn1wSNHEQ47RVs20XPgMOPuDny+aXw9N/G8uROBRHZZKUUb6rne8iUbW49Q8sK6f9bKkL/a7/fH7kBUwL3uXs64XgKgsGEthevrKVq/lvw6J4scdjyXO7n1dRsjv3bgGx5BsdtovHiWglUrkWW5BhjMNADVqqoKVVVFIBAQ9z1j4kLzbvEJNtHW8IoIBoMx0zQtZqFQSIRCIaHrutB1Xfw1OSXC4bCIRCICqIZ5HoEkSUzc6OVM49toXh/Ybbx4rCXl8cTffstjjoQxGQswmR48mPbGnXiH/wBg89FPcSwtTxCaSkB8OS8B0Uk+7zQaEq8e3k/dzrdSvo65iGNjMuSv1nU9IRGlIkxXn+GrAQb/dR5I5puLNBkWnIjm8j0qAarZbN4GlM6bITlGABXm8ecUWAJkPyIBKjAFBP4GIMQcOK2oAoUAAAAASUVORK5CYII=');
       background-position: 0 0;
       background-repeat: no-repeat;
       background-size: 100%;
@@ -123,39 +124,39 @@ a {
  */
 
 h1 {
-  @include rem( font-size, 2rem );
-  @include rem( line-height, 2.4rem );
-  @include rem( margin, 1.2rem 0 2.4rem );
+  @include rem( font-size, 1.8rem );
+  @include rem( line-height, 1.8rem );
+  @include rem( margin, 1.2rem 0 1.8rem );
 }
 
 h2 {
   @include rem( font-size, 1.5rem );
-  @include rem( line-height, 2.4rem );
-  @include rem( margin, 1.2rem 0);
+  @include rem( line-height, 1.8rem );
+  @include rem( margin, 1.2rem 0 1.8rem );
 }
 
 h3 {
-  @include rem( font-size, 1.16667rem);
-  @include rem( line-height, 2.4rem);
-  @include rem( margin, 1.2rem 0);
+  @include rem( font-size, 1.16667rem );
+  @include rem( line-height, 1.8rem );
+  @include rem( margin, 1.2rem 0 1.8rem );
 }
 
 h4 {
-  @include rem( font-size, 1rem);
-  @include rem( line-height, 2.4rem);
-  @include rem( margin, 1.2rem 0);
+  @include rem( font-size, 1rem );
+  @include rem( line-height, 1.8rem );
+  @include rem( margin, 1.2rem 0 1.8rem );
 }
 
 h5 {
-  @include rem( font-size, 0.83333rem);
-  @include rem( line-height, 2.4rem);
-  @include rem( margin, 1.2rem 0);
+  @include rem( font-size, 0.83333rem );
+  @include rem( line-height, 1.8rem );
+  @include rem( margin, 1.2rem 0 1.8rem );
 }
 
 h6 {
-  @include rem( font-size, 0.75rem);
-  @include rem( line-height, 2.4rem);
-  @include rem( margin, 1.2rem 0);
+  @include rem( font-size, 0.75rem );
+  @include rem( line-height, 1.8rem );
+  @include rem( margin, 1.2rem 0 1.8rem);
 }
 
 /*
@@ -172,13 +173,23 @@ blockquote {
   @include rem( border-left, .6rem solid $background-color );
 }
 
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
 /*
  * Addresses styling not present in IE 6/7/8/9.
  */
 
 mark {
-  background: #ff0;
-  color: #000;
+  background-color: lighten( $background-color, 20% );
+  color:            darken( $text-color, 20% );
 }
 
 /*

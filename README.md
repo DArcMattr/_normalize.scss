@@ -1,8 +1,8 @@
-# `_normalize.scss` v1.0.1
+# `_normalize.scss` v1.1.0
 
 `_normalize.scss` is a customisable SASS file that makes browsers render all
 elements more consistently and in line with modern standards--derived from
-Nicholas Gallagher's Normalize.css project. It is the result of researching the
+Nicholas Gallagher's `Normalize.css` project. It is the result of researching the
 differences between default browser styles in order to precisely target only
 the styles that need normalizing.
 
@@ -21,13 +21,13 @@ the styles that need normalizing.
 I intend `_normalize.scss` to be used as a declaration of many default styles
 that I use in Ayn Rand Institute web projects, and for working around many
 browser quirks. It has been adapted for use as an `@import` into a site's
-stylesheet, and compiled in using [Compass](http://compass-style.org). A
-standalone version is generated for sites where the entirety of the source
-markup is out of my hands.
+stylesheet, and compiled in using [Compass][].  A standalone version is
+generated for sites where the entirety of the source markup is out of my hands.
+The project also requires use of Compass, but is not making much use of it yet.
 
 ### From Nicholas Gallagher (necolas):
 
-Normalize.css is intended to be used as an alternative to CSS resets.
+`Normalize.css` is intended to be used as an alternative to CSS resets.
 
 It's suggested that you read the `normalize.css` file and consider customising
 it to meet your needs. Alternatively, include the file in your project and
@@ -47,15 +47,17 @@ around, these old browsers include:
 ## Contribute
 
 Please contribute to the upstream project: Please read the [issue
-guidelines](https://github.com/necolas/issue-guidelines). Issue reports to me
-are welcome, but either address a matter of my personal taste or site
-standards, or ultimately rely on the work of the upstream maintainers. Only one
-of those is a "public" problem (hint, it's upstream).
+guidelines][].  Issue reports to me are welcome, but either address a matter of
+my personal taste or site standards, or ultimately rely on the work of the
+upstream maintainers. Only one of those is a "public" problem (hint, it's
+upstream).
 
 ## Acknowledgements
 
-`_normalize.css` is derived from Normalize.css, which is a project by [Nicolas
+`_normalize.css` is adapted from Normalize.css, which is a project by [Nicolas
 Gallagher][] and [Jonathan Neal][].
 
 [Jonathan Neal]: http://github.com/jonathantneal
 [Nicolas Gallagher]: http://github.com/necolas
+[issue guidelines]: https://github.com/necolas/issue-guidelines
+[Compass]: http://compass-style.org
