@@ -93,7 +93,7 @@ a[href$=pdf] {
     width: 1.063rem;
     padding: 0;
     margin: 0;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAMAAAAMs7fIAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAGxQTFRF////8PDwwMDAe3x8paWmhQ8UnYOE7Rwk6ExSsRUbzxgfWAoNdg4SOwcJ3N3ebm5v8lVb4URL2z5E6ygv6UBG5XB15HyB4Kyv5mRp4pSY3dDS37i73sTG51he44iMb2Jjp42PU0ZHcj5ANzc32/NifwAAAAF0Uk5TAEDm2GYAAAABYktHRACIBR1IAAAACXBIWXMAAABIAAAASABGyWs+AAAAe0lEQVQY043OyxqCIBCA0XFEnS6OmkSAlrf3f0cJLaFV/4KPOYsBAEjwCHyYir00y91cHJE4nfMklsu1xEiYuUKo6+ZGrlbSfRO3Wbgbq8f7DEX/I+ZHLJGNRZmO+lDss1NaFlJ/xGr/eP+iYRPjPxdsHiVxLNNcfVtwBdPrC9ktDOFPAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTE5VDIyOjI0OjEyLTA3OjAwhMR61wAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMi0wMS0yMVQwMDoyNDoyNS0wODowMNq1VW4AAAAASUVORK5CYII=);
+    background-image: url("data:png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQA5LzExLzA24EiMeQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAATOSURBVFiF5ZddbJNVGMd/b/u+sG5dW8d0H+4L2UcGKUOjUBkD0QsVCSHGCSZEyIzGi92RyI3gBQYuIF440USYCULMdMEAGhMCKJZsZJAY2AfsI0Sy4bplG9LOvu3bt32PF9C69Wudwyv/ydNzznM+/v/znHOevIX/O6QMx1k8Ho8qhEAIARArASRJQpKkWXXDMNB1/afy8vKtgJ5SwOmldSJV50Lw9KWz+P1+rFarr6WlpfLQoUMTycbJQWGQXVg4y7nkmToApn67EWsHPGOonvGMyNWxMQzDwOv1Ultba2tubr4NLEsmQjpetkIskkyznNvvdANw/9YAP29r4vXuDgB+P3WWrt0fxvoB2ipWJggICYOGSz8wPj6Oy+UCYGRkZLqsrGwJccdh0oRBGDHLAE5WOJm+O0pl0w4Azm9v4gnXs5S/sSXWf7LCmTA3jEATRuxORFFaWpo7NDR0FZBnCQgaBroQswxg8ZPF5JQUE/T5ALh75SpD7aexlBQDsONODzvu9CTM1YUgaBgPwhsnorKyclV/f/9nQCzksiYMFgsjIYyNHefo/eoE148dZ/W+PejCoMD1HAPtpwH4cdsuAPQkc6MRUBSF9vZ2RkdHURSFqqoqXC7XuwMDAxdqampOAcIUEoJwnAF8XlqL+6MDsfZ7wzeZ6LvFze++B2C4s4vhzq6EuWEhCAmBJEnk5uaSnZ1NTk4Ouq5z7do1WltbTXa7fT+gAEj7Cp8SeWYlYRczUfL8aib6+tEeHsdcuBfReafrF7KyslBVFU3TCIVCBAIBNE0jPz+f5cuXPw5MyiHDYMzQ0i445r6cEfFMRI/A4XDE2pFIhGAwiNlsBrABk/IX2p9lgCXdYpqmVbjd7nPwIAPGXy5JkgisqUeqqkTe/Bq2pl3IspyQHRVFQVGUqF+O/kwS9zTiEQ6HcwoKCtLudkqAZdMmzMXFWPPyZhIlTdVRyF6vN5CO/CH8Vqs1rQBfbi7i/EWsBz/GYrHE/PFlvABT4nKpSdKZcDrx9fZhctjnHDsTCxZgMpmQJIlFDfVoSGStdM4p4D+JQASJIBKT33w7LwGZfg9Ue73egWSiougsqcLssGEAa65cQrbbk96BaJmVlVUDDD6SCNw+eJgAEivaTuC/P03fB3szjkDa55dqtzPbutfL4JGjLGt+H3udkzXnzuB+eSsTro2s2LsHgHvdfSh2G0Ub1pFX51y4gJn1wSNHEQ47RVs20XPgMOPuDny+aXw9N/G8uROBRHZZKUUb6rne8iUbW49Q8sK6f9bKkL/a7/fH7kBUwL3uXs64XgKgsGEthevrKVq/lvw6J4scdjyXO7n1dRsjv3bgGx5BsdtovHiWglUrkWW5BhjMNADVqqoKVVVFIBAQ9z1j4kLzbvEJNtHW8IoIBoMx0zQtZqFQSIRCIaHrutB1Xfw1OSXC4bCIRCICqIZ5HoEkSUzc6OVM49toXh/Ybbx4rCXl8cTffstjjoQxGQswmR48mPbGnXiH/wBg89FPcSwtTxCaSkB8OS8B0Uk+7zQaEq8e3k/dzrdSvo65iGNjMuSv1nU9IRGlIkxXn+GrAQb/dR5I5puLNBkWnIjm8j0qAarZbN4GlM6bITlGABXm8ecUWAJkPyIBKjAFBP4GIMQcOK2oAoUAAAAASUVORK5CYII=");
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 100%; }
@@ -109,52 +109,52 @@ a[href$=pdf] {
  * Addresses font sizes within `section` and `article` in Firefox 4+, Chrome, Safari 5.
  */
 h1 {
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 38.4px;
-  line-height: 2.4rem;
-  margin: 19.2px 0 38.4px;
-  margin: 1.2rem 0 2.4rem; }
+  font-size: 28.8px;
+  font-size: 1.8rem;
+  line-height: 28.8px;
+  line-height: 1.8rem;
+  margin: 19.2px 0 28.8px;
+  margin: 1.2rem 0 1.8rem; }
 
 h2 {
   font-size: 24px;
   font-size: 1.5rem;
-  line-height: 38.4px;
-  line-height: 2.4rem;
-  margin: 19.2px 0;
-  margin: 1.2rem 0; }
+  line-height: 28.8px;
+  line-height: 1.8rem;
+  margin: 19.2px 0 28.8px;
+  margin: 1.2rem 0 1.8rem; }
 
 h3 {
   font-size: 18.66672px;
   font-size: 1.16667rem;
-  line-height: 38.4px;
-  line-height: 2.4rem;
-  margin: 19.2px 0;
-  margin: 1.2rem 0; }
+  line-height: 28.8px;
+  line-height: 1.8rem;
+  margin: 19.2px 0 28.8px;
+  margin: 1.2rem 0 1.8rem; }
 
 h4 {
   font-size: 16px;
   font-size: 1rem;
-  line-height: 38.4px;
-  line-height: 2.4rem;
-  margin: 19.2px 0;
-  margin: 1.2rem 0; }
+  line-height: 28.8px;
+  line-height: 1.8rem;
+  margin: 19.2px 0 28.8px;
+  margin: 1.2rem 0 1.8rem; }
 
 h5 {
   font-size: 13.33328px;
   font-size: 0.83333rem;
-  line-height: 38.4px;
-  line-height: 2.4rem;
-  margin: 19.2px 0;
-  margin: 1.2rem 0; }
+  line-height: 28.8px;
+  line-height: 1.8rem;
+  margin: 19.2px 0 28.8px;
+  margin: 1.2rem 0 1.8rem; }
 
 h6 {
   font-size: 12px;
   font-size: 0.75rem;
-  line-height: 38.4px;
-  line-height: 2.4rem;
-  margin: 19.2px 0;
-  margin: 1.2rem 0; }
+  line-height: 28.8px;
+  line-height: 1.8rem;
+  margin: 19.2px 0 28.8px;
+  margin: 1.2rem 0 1.8rem; }
 
 /*
  * Addresses styling not present in IE 7/8/9, Safari 5, Chrome.
@@ -171,12 +171,20 @@ blockquote {
   border-left: 9.6px solid #cccccc;
   border-left: 0.6rem solid #cccccc; }
 
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
 /*
  * Addresses styling not present in IE 6/7/8/9.
  */
 mark {
-  background: #ff0;
-  color: #000; }
+  background-color: white;
+  color: black; }
 
 /*
  * Addresses margins set differently in IE 6/7.
@@ -190,7 +198,7 @@ p, pre {
  */
 code, kbd, pre, samp {
   font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
+  _font-family: "courier new", monospace;
   margin: 19.2px 0;
   margin: 1.2rem 0; }
 
@@ -320,7 +328,7 @@ figure, form {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
