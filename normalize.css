@@ -202,6 +202,9 @@ code, kbd, pre, samp {
   margin: 19.2px 0;
   margin: 1.2rem 0; }
 
+em {
+  letter-spacing: .5px; }
+
 /*
  * Improves readability of pre-formatted text in all browsers.
  */

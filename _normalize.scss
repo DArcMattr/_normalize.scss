@@ -210,6 +210,9 @@ code, kbd, pre, samp {
   @include rem( margin, 1.2rem 0);
 }
 
+em {
+  letter-spacing: .5px;
+}
 /*
  * Improves readability of pre-formatted text in all browsers.
  */
