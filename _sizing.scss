@@ -3,7 +3,13 @@
 
 // Base font size in pixels, if not already defined.
 // Should be the same as the font-size of the html element.
-$base-font-size: 16px !default;
+
+
+// Default font size in pixels if not overridden.
+// present in most, if not all, browsers.
+$baseFontSize: 16px;
+
+$base-font-size: $baseFontSize !default;
 $rem-with-px-fallback: true !default;
 
 // @private Number of pixels in 1rem.
@@ -77,9 +83,6 @@ $px-per-rem: $base-font-size / 1rem;
 
 // https://gist.github.com/2237465
 // See http://mrdanadams.com/2012/pixel-ems-css-conversion-sass-mixin/
-
-// Default font size in pixels if not overridden.
-$baseFontSize: 16px;
 
 //Convert PX units to EMs.
 //Ex: margin-right: pem(16);

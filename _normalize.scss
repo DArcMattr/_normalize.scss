@@ -3,10 +3,17 @@
 /* =============================================================================
    Mixins
    ========================================================================== */
-@import "sizing";
-@import "compass";
+$base-font-size: 15px !default; // otherwise inherited from _sizing
 $text-color: #333 !default;
 $background-color: #ccc !default;
+$lh: 1.2rem !default; // line-height unit, in rem
+
+@import "sizing";
+@import "compass";
+
+%italic {
+  font-style: italic;
+}
 
 /* ==========================================================================
    HTML5 display definitions
@@ -52,11 +59,12 @@ audio:not([controls]) {
  *    user zoom.
  */
 html {
-  font-size: 100%;                /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  -ms-text-size-adjust: 100%;     /* 2 */
+  font-size: percentage( $base-font-size / $baseFontSize ); /* 1 */
+  -webkit-text-size-adjust: 100%;                           /* 2 */
+  -ms-text-size-adjust: 100%;                               /* 2 */
   font-family: sans-serif;
   color: $text-color;
+  background-color: $background-color;
 }
 
 /*
@@ -64,7 +72,8 @@ html {
  * elements.
  */
 button, input[type=submit], select {
-  font-family: sans-serif; }
+  font-family: sans-serif;
+}
 
 input, textarea {
   font-family: monospace;
@@ -91,15 +100,15 @@ a {
   &:active, &:hover {
     outline: 0;
   }
-  &[href$=pdf] {
+  &[href$=pdf] { // used in accordance with terms at http://www.adobe.com/misc/linking.html
     position: relative;
-    @include rem( padding-right, 1.063rem );
+    @include rem( padding-right, 1.06666667rem );
     &:after {
       position: absolute;
       content: "";
       display: inline-block;
-      @include rem( height, 1.063rem );
-      @include rem( width,  1.063rem );
+      @include rem( height, 1.06666667rem );
+      @include rem( width,  1.06666667rem );
       padding: 0;
       margin: 0;
       background-image: url('data:png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQA5LzExLzA24EiMeQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAATOSURBVFiF5ZddbJNVGMd/b/u+sG5dW8d0H+4L2UcGKUOjUBkD0QsVCSHGCSZEyIzGi92RyI3gBQYuIF440USYCULMdMEAGhMCKJZsZJAY2AfsI0Sy4bplG9LOvu3bt32PF9C69Wudwyv/ydNzznM+/v/znHOevIX/O6QMx1k8Ho8qhEAIARArASRJQpKkWXXDMNB1/afy8vKtgJ5SwOmldSJV50Lw9KWz+P1+rFarr6WlpfLQoUMTycbJQWGQXVg4y7nkmToApn67EWsHPGOonvGMyNWxMQzDwOv1Ultba2tubr4NLEsmQjpetkIskkyznNvvdANw/9YAP29r4vXuDgB+P3WWrt0fxvoB2ipWJggICYOGSz8wPj6Oy+UCYGRkZLqsrGwJccdh0oRBGDHLAE5WOJm+O0pl0w4Azm9v4gnXs5S/sSXWf7LCmTA3jEATRuxORFFaWpo7NDR0FZBnCQgaBroQswxg8ZPF5JQUE/T5ALh75SpD7aexlBQDsONODzvu9CTM1YUgaBgPwhsnorKyclV/f/9nQCzksiYMFgsjIYyNHefo/eoE148dZ/W+PejCoMD1HAPtpwH4cdsuAPQkc6MRUBSF9vZ2RkdHURSFqqoqXC7XuwMDAxdqampOAcIUEoJwnAF8XlqL+6MDsfZ7wzeZ6LvFze++B2C4s4vhzq6EuWEhCAmBJEnk5uaSnZ1NTk4Ouq5z7do1WltbTXa7fT+gAEj7Cp8SeWYlYRczUfL8aib6+tEeHsdcuBfReafrF7KyslBVFU3TCIVCBAIBNE0jPz+f5cuXPw5MyiHDYMzQ0i445r6cEfFMRI/A4XDE2pFIhGAwiNlsBrABk/IX2p9lgCXdYpqmVbjd7nPwIAPGXy5JkgisqUeqqkTe/Bq2pl3IspyQHRVFQVGUqF+O/kwS9zTiEQ6HcwoKCtLudkqAZdMmzMXFWPPyZhIlTdVRyF6vN5CO/CH8Vqs1rQBfbi7i/EWsBz/GYrHE/PFlvABT4nKpSdKZcDrx9fZhctjnHDsTCxZgMpmQJIlFDfVoSGStdM4p4D+JQASJIBKT33w7LwGZfg9Ue73egWSiougsqcLssGEAa65cQrbbk96BaJmVlVUDDD6SCNw+eJgAEivaTuC/P03fB3szjkDa55dqtzPbutfL4JGjLGt+H3udkzXnzuB+eSsTro2s2LsHgHvdfSh2G0Ub1pFX51y4gJn1wSNHEQ47RVs20XPgMOPuDny+aXw9N/G8uROBRHZZKUUb6rne8iUbW49Q8sK6f9bKkL/a7/fH7kBUwL3uXs64XgKgsGEthevrKVq/lvw6J4scdjyXO7n1dRsjv3bgGx5BsdtovHiWglUrkWW5BhjMNADVqqoKVVVFIBAQ9z1j4kLzbvEJNtHW8IoIBoMx0zQtZqFQSIRCIaHrutB1Xfw1OSXC4bCIRCICqIZ5HoEkSUzc6OVM49toXh/Ybbx4rCXl8cTffstjjoQxGQswmR48mPbGnXiH/wBg89FPcSwtTxCaSkB8OS8B0Uk+7zQaEq8e3k/dzrdSvo65iGNjMuSv1nU9IRGlIkxXn+GrAQb/dR5I5puLNBkWnIjm8j0qAarZbN4GlM6bITlGABXm8ecUWAJkPyIBKjAFBP4GIMQcOK2oAoUAAAAASUVORK5CYII=');
@@ -124,39 +133,39 @@ a {
  */
 
 h1 {
-  @include rem( font-size, 1.8rem );
-  @include rem( line-height, 1.8rem );
-  @include rem( margin, 1.2rem 0 1.8rem );
+  @include rem( font-size, 1.5*$lh );
+  @include rem( line-height, 1.5*$lh );
+  @include rem( margin, 1*$lh 0 1.5*$lh );
 }
 
 h2 {
-  @include rem( font-size, 1.5rem );
-  @include rem( line-height, 1.8rem );
-  @include rem( margin, 1.2rem 0 1.8rem );
+  @include rem( font-size, 4/3*$lh );
+  @include rem( line-height, 1.5*$lh );
+  @include rem( margin, 1*$lh 0 1.5*$lh );
 }
 
 h3 {
   @include rem( font-size, 1.16667rem );
-  @include rem( line-height, 1.8rem );
-  @include rem( margin, 1.2rem 0 1.8rem );
+  @include rem( line-height, 1.5*$lh );
+  @include rem( margin, 1*$lh 0 1.5*$lh );
 }
 
 h4 {
-  @include rem( font-size, 1rem );
-  @include rem( line-height, 1.8rem );
-  @include rem( margin, 1.2rem 0 1.8rem );
+  @include rem( font-size, 5/6*$lh );
+  @include rem( line-height, 1.5*$lh );
+  @include rem( margin, 1*$lh 0 1.5*$lh );
 }
 
 h5 {
-  @include rem( font-size, 0.83333rem );
-  @include rem( line-height, 1.8rem );
-  @include rem( margin, 1.2rem 0 1.8rem );
+  @include rem( font-size, 25/36*$lh );
+  @include rem( line-height, 1.5*$lh );
+  @include rem( margin, 1*$lh 0 1.5*$lh );
 }
 
 h6 {
-  @include rem( font-size, 0.75rem );
-  @include rem( line-height, 1.8rem );
-  @include rem( margin, 1.2rem 0 1.8rem);
+  @include rem( font-size, 24/15*$lh );
+  @include rem( line-height, 1.5*$lh );
+  @include rem( margin, $lh 0 1.5*$lh);
 }
 
 /*
@@ -167,10 +176,10 @@ abbr[title] {
   border-bottom: 1px dotted; }
 
 blockquote {
-  @include rem( margin, 1.2rem 0 );
-  @include rem( padding, 0 0 0 .6rem);
+  @include rem( margin, $lh 0 );
+  @include rem( padding, 0 0 0 .5*$lh);
   border: 0;
-  @include rem( border-left, .6rem solid $background-color );
+  @include rem( border-left, .5*$lh solid $background-color );
 }
 
 /**
@@ -197,7 +206,11 @@ mark {
  */
 
 p, pre {
-  @include rem( margin, 1.2rem 0);
+  @include rem( margin, $lh 0);
+}
+
+p {
+  @include hyphenation;
 }
 
 /*
@@ -207,11 +220,20 @@ p, pre {
 code, kbd, pre, samp {
   font-family: monospace, serif;
   _font-family: 'courier new', monospace;
-  @include rem( margin, 1.2rem 0);
+  @include rem( margin, $lh 0);
 }
 
 em {
+  @extend %italic;
   letter-spacing: .5px;
+}
+
+cite, i {
+  @extend %italic;
+}
+
+strong, b {
+  font-weight: 700;
 }
 /*
  * Improves readability of pre-formatted text in all browsers.
@@ -275,7 +297,7 @@ sub {
  */
 
 dl, menu, ol, ul {
-  @include rem( margin, 1.2rem 0 );
+  @include rem( margin, $lh 0 );
 }
 
 dt {
@@ -283,7 +305,7 @@ dt {
 }
 
 dd {
-  @include rem( margin, 0 0 1.2rem 1.2rem );
+  @include rem( margin, 0 0 $lh $lh );
 }
 
 /*
@@ -293,7 +315,7 @@ dd {
 menu, ol, ul {
   list-style-position: outside;
 
-  @include rem( padding, 0 0 0 1.2rem );
+  @include rem( padding, 0 0 0 $lh );
 }
 
 ol {
@@ -317,7 +339,7 @@ ul {
 }
 
 li {
-  @include rem( margin, 1.2rem 0 );
+  @include rem( margin, $lh 0 );
 }
 
 nav {
