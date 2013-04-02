@@ -223,31 +223,34 @@ p, pre {
 
 /* line 212, _normalize.scss */
 p {
-  -ms-word-break: break-all;
-  word-break: break-all;
-  word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
-  hyphens: auto; }
+  hyphens: auto;
+  -ms-word-break: normal;
+  word-break: normal; }
 
 /*
  * Corrects font family set oddly in IE 6, Safari 4/5, Chrome.
  */
-/* line 220, _normalize.scss */
+/* line 221, _normalize.scss */
 code, kbd, pre, samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   margin: 18px 0;
   margin: 1.2rem 0; }
 
-/* line 226, _normalize.scss */
+/* line 227, _normalize.scss */
 em {
   letter-spacing: .5px; }
+
+/* line 236, _normalize.scss */
+strong, b {
+  font-weight: 700; }
 
 /*
  * Improves readability of pre-formatted text in all browsers.
  */
-/* line 238, _normalize.scss */
+/* line 243, _normalize.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -256,10 +259,10 @@ pre {
 /*
  * Addresses CSS quotes not supported in IE 6/7.
  */
-/* line 248, _normalize.scss */
+/* line 253, _normalize.scss */
 q {
   quotes: none; }
-  /* line 250, _normalize.scss */
+  /* line 255, _normalize.scss */
   q:before, q:after {
     content: '';
     content: none; }
@@ -267,21 +270,21 @@ q {
 /*
  * Addresses `quotes` property not supported in Safari 4.
  */
-/* line 260, _normalize.scss */
+/* line 265, _normalize.scss */
 small {
   font-size: 80%; }
 
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 268, _normalize.scss */
+/* line 273, _normalize.scss */
 sub {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
 
-/* line 275, _normalize.scss */
+/* line 280, _normalize.scss */
 sup {
   font-size: 75%;
   line-height: 0;
@@ -289,7 +292,7 @@ sup {
   vertical-align: baseline;
   top: -0.5em; }
 
-/* line 283, _normalize.scss */
+/* line 288, _normalize.scss */
 sub {
   bottom: -0.25em; }
 
@@ -299,12 +302,12 @@ sub {
 /*
  * Addresses margins set differently in IE 6/7.
  */
-/* line 295, _normalize.scss */
+/* line 300, _normalize.scss */
 dl, menu, ol, ul {
   margin: 18px 0;
   margin: 1.2rem 0; }
 
-/* line 303, _normalize.scss */
+/* line 308, _normalize.scss */
 dd {
   margin: 0 0 18px 18px;
   margin: 0 0 1.2rem 1.2rem; }
@@ -312,38 +315,38 @@ dd {
 /*
  * Addresses paddings set differently in IE 6/7.
  */
-/* line 311, _normalize.scss */
+/* line 316, _normalize.scss */
 menu, ol, ul {
   list-style-position: outside;
   padding: 0 0 0 18px;
   padding: 0 0 0 1.2rem; }
 
-/* line 317, _normalize.scss */
+/* line 322, _normalize.scss */
 ol {
   list-style-type: decimal; }
-  /* line 319, _normalize.scss */
+  /* line 324, _normalize.scss */
   ol ol {
     list-style-type: upper-alpha; }
-    /* line 321, _normalize.scss */
+    /* line 326, _normalize.scss */
     ol ol ol {
       list-style-type: lower-alpha; }
 
-/* line 327, _normalize.scss */
+/* line 332, _normalize.scss */
 ul {
   list-style-type: disc; }
-  /* line 329, _normalize.scss */
+  /* line 334, _normalize.scss */
   ul ul {
     list-style-type: square; }
-    /* line 331, _normalize.scss */
+    /* line 336, _normalize.scss */
     ul ul ul {
       list-style-type: circle; }
 
-/* line 337, _normalize.scss */
+/* line 342, _normalize.scss */
 li {
   margin: 18px 0;
   margin: 1.2rem 0; }
 
-/* line 342, _normalize.scss */
+/* line 347, _normalize.scss */
 nav li {
   list-style: none;
   margin: 0; }
@@ -351,7 +354,7 @@ nav li {
 /*
  * Corrects list images handled incorrectly in IE 7.
  */
-/* line 353, _normalize.scss */
+/* line 358, _normalize.scss */
 nav ul, nav ol {
   list-style: none;
   list-style-image: none; }
@@ -363,7 +366,7 @@ nav ul, nav ol {
  * 1. Removes border when inside `a` element in IE 6/7/8/9, Firefox 3.
  * 2. Improves image quality when scaled in IE 7.
  */
-/* line 368, _normalize.scss */
+/* line 373, _normalize.scss */
 img {
   border: 0;
   /* 1 */
@@ -373,7 +376,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE 9.
  */
-/* line 377, _normalize.scss */
+/* line 382, _normalize.scss */
 svg:not(:root) {
   overflow: hidden; }
 
@@ -384,16 +387,16 @@ svg:not(:root) {
  * Addresses margin not present in IE 6/7/8/9, Safari 5, Opera 11.
  * + Corrects margin displayed oddly in IE 6/7.
  */
-/* line 390, _normalize.scss */
+/* line 395, _normalize.scss */
 figure, form {
   margin: 0; }
 
 /*
  * Define consistent border, margin, and padding.
  */
-/* line 397, _normalize.scss */
+/* line 402, _normalize.scss */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -402,7 +405,7 @@ fieldset {
  * 2. Corrects text not wrapping in Firefox 3.
  * 3. Corrects alignment displayed oddly in IE 6/7.
  */
-/* line 408, _normalize.scss */
+/* line 413, _normalize.scss */
 legend {
   border: 0;
   /* 1 */
@@ -421,7 +424,7 @@ legend {
  * 4. Enable line-wrapping in IE8+, from
  *      http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
  */
-/* line 422, _normalize.scss */
+/* line 427, _normalize.scss */
 button, input, select, textarea {
   font-size: 100%;
   /* 1 */
@@ -436,7 +439,7 @@ button, input, select, textarea {
  * Addresses Firefox 3/4 setting `line-height` on `input` using `!important` in the
  * UA stylesheet.
  */
-/* line 433, _normalize.scss */
+/* line 438, _normalize.scss */
 button, input {
   line-height: normal; }
 
@@ -449,11 +452,11 @@ button, input {
  * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-/* line 446, _normalize.scss */
+/* line 451, _normalize.scss */
 .pointy, label, button, html input[type="button"], input[type="reset"], input[type="submit"] {
   cursor: pointer; }
 
-/* line 454, _normalize.scss */
+/* line 459, _normalize.scss */
 button, html input[type="button"] {
   -webkit-appearance: button;
   /* 2 */
@@ -461,7 +464,7 @@ button, html input[type="button"] {
   *overflow: visible;
   /* 4 */ }
 
-/* line 461, _normalize.scss */
+/* line 466, _normalize.scss */
 input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -472,12 +475,12 @@ input[type="reset"], input[type="submit"] {
 /*
  * A. Re-set default cursor for disabled elements.
  */
-/* line 471, _normalize.scss */
+/* line 476, _normalize.scss */
 button[disabled] {
   cursor: default;
   /* A. */ }
 
-/* line 475, _normalize.scss */
+/* line 480, _normalize.scss */
 input {
   /*
    * 1. Addresses box sizing set to content-box in IE 8/9.
@@ -490,11 +493,11 @@ input {
    * 2. Addresses `box-sizing` set to `border-box` in Safari 5, Chrome (include `-moz`
    *    to future-proof).
    */ }
-  /* line 476, _normalize.scss */
+  /* line 481, _normalize.scss */
   input[disabled] {
     cursor: default;
     /* A. */ }
-  /* line 485, _normalize.scss */
+  /* line 490, _normalize.scss */
   input[type="checkbox"], input[type="radio"] {
     box-sizing: border-box;
     /* 1 */
@@ -504,7 +507,7 @@ input {
     /* 3 */
     *width: 13px;
     /* 3 */ }
-  /* line 496, _normalize.scss */
+  /* line 501, _normalize.scss */
   input[type="search"] {
     -webkit-appearance: textfield;
     /* 1 */
@@ -515,14 +518,14 @@ input {
     /*
      * Removes inner padding and search cancel button in Safari 5, Chrome on OS X.
      */ }
-    /* line 504, _normalize.scss */
+    /* line 509, _normalize.scss */
     input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
       -webkit-appearance: none; }
 
 /*
  * Removes inner padding and border in Firefox 3+.
  */
-/* line 513, _normalize.scss */
+/* line 518, _normalize.scss */
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0; }
@@ -531,7 +534,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE 6/7/8/9.
  * 2. Improves readability and alignment in all browsers.
  */
-/* line 522, _normalize.scss */
+/* line 527, _normalize.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -544,11 +547,11 @@ textarea {
 /*
  * Remove most spacing between table cells.
  */
-/* line 534, _normalize.scss */
+/* line 539, _normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 539, _normalize.scss */
+/* line 544, _normalize.scss */
 iframe {
   border: 0; }

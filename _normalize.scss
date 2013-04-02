@@ -210,7 +210,8 @@ p, pre {
 }
 
 p {
-  @include hyphenation;
+  @include hyphens(auto);
+  @include word-break(normal);
 }
 
 /*
