@@ -104,8 +104,9 @@ a {
     position: relative;
     @include rem( padding-right, 1.06666667rem );
     &:after {
-      position: absolute;
       content: "";
+      position: absolute;
+      right: 0;
       display: inline-block;
       @include rem( height, 1.06666667rem );
       @include rem( width,  1.06666667rem );
