@@ -140,7 +140,7 @@ h1 {
 }
 
 h2 {
-  @include rem( font-size, 4/3*$lh );
+  @include rem( font-size, 5/4*$lh );
   @include rem( line-height, 1.5*$lh );
   @include rem( margin, 1*$lh 0 1.5*$lh );
 }
