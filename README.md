@@ -6,7 +6,7 @@ Nicholas Gallagher's `Normalize.css` project. It is the result of researching th
 differences between default browser styles in order to precisely target only
 the styles that need normalizing.
 
-[Check out the demo](http://darcmattr.github.com/_normalize.scss/test.html)
+[Check out the demo](http://darcmattr.github.io/_normalize.scss/test.html)
 
 ## What does it do?
 
