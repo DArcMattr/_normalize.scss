@@ -28,7 +28,7 @@ The project also requires use of Compass, but is not making much use of it yet.
 The project comes with a git hook, which has to be symlinked into the .git
 directory to be used
 
-    ln -s ./git_hooks/post-merge ./.git/hooks/post-merge
+    ln ./git_hooks/post-merge ./.git/hooks/post-merge
 
 ### From Nicholas Gallagher (necolas):
 
