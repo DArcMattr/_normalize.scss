@@ -25,11 +25,16 @@ stylesheet, and compiled in using [Compass][].  A standalone version is
 generated for sites where the entirety of the source markup is out of my hands.
 The project also requires use of Compass, but is not making much use of it yet.
 
+The project comes with a git hook, which has to be symlinked into the .git
+directory to be used
+
+    ln -s ./git_hooks/post-merge ./.git/hooks/post-merge
+
 ### From Nicholas Gallagher (necolas):
 
-`Normalize.css` is intended to be used as an alternative to CSS resets.
+`_normalize.scss` is intended to be used as an alternative to CSS resets.
 
-It's suggested that you read the `normalize.css` file and consider customising
+It's suggested that you read the `_normalize.scss` file and consider customising
 it to meet your needs. Alternatively, include the file in your project and
 override the defaults later in your CSS.
 
