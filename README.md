@@ -1,4 +1,4 @@
-# `_normalize.scss` v1.1.0
+# `_normalize.scss` v1.2.0
 
 `_normalize.scss` is a customisable SASS file that makes browsers render all
 elements more consistently and in line with modern standards--derived from
@@ -21,7 +21,7 @@ the styles that need normalizing.
 I intend `_normalize.scss` to be used as a declaration of many default styles
 that I use in Ayn Rand Institute web projects, and for working around many
 browser quirks. It has been adapted for use as an `@import` into a site's
-stylesheet, and compiled in using [Compass][].  A standalone version is
+stylesheet, and compiled in using [SASSC][].  A standalone version is
 generated for sites where the entirety of the source markup is out of my hands.
 The project also requires use of Compass, but is not making much use of it yet.
 
@@ -29,6 +29,19 @@ The project comes with a git hook, which has to be symlinked into the .git
 directory to be used
 
     ln ./git_hooks/post-merge ./.git/hooks/post-merge
+
+## Dependencies:
+
+* A [make][] utility, currently tested on Mac OS X
+* [SASSC][]
+* [SVGO][], a NodeJS utility used to optimize SVG files
+
+## For the future
+
+This file is becoming less of a Normalize styles, and more of a "framework", as
+my opinions about the margins/padding and base appearance of some links are
+creeping in. A future re-sync with Necolas' project is planned, but will be
+quite selective.
 
 ### From Nicholas Gallagher (necolas):
 
@@ -65,4 +78,6 @@ Gallagher][] and [Jonathan Neal][].
 [Jonathan Neal]: http://github.com/jonathantneal
 [Nicolas Gallagher]: http://github.com/necolas
 [issue guidelines]: https://github.com/necolas/issue-guidelines
-[Compass]: http://compass-style.org
+[SASSC]: https://github.com/hcatlin/sassc
+[make]: http://en.wikipedia.org/wiki/Make_(software)
+[SVGO]: https://github.com/svg/svgo
