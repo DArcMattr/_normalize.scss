@@ -99,7 +99,7 @@ a {
   &:active, &:hover {
     outline: 0;
   }
-  &[href$=pdf] { // used in accordance with terms at http://www.adobe.com/misc/linking.html
+  &[href$=pdf] { /*! SVG from http://jozef89.deviantart.com/art/Free-document-icons-445521778 */
     position: relative;
     @include rem( padding-right, 1.06666667rem );
     &:after {
@@ -111,7 +111,7 @@ a {
       @include rem( width,  1.06666667rem );
       padding: 0;
       margin: 0;
-      background-image: url('./assets/file-icon-pdf.svg');
+      background-image: url('assets/file-icon-pdf.svg');
       background-position: 0 0;
       background-repeat: no-repeat;
       background-size: 100%;
