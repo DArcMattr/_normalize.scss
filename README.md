@@ -23,7 +23,6 @@ that I use in Ayn Rand Institute web projects, and for working around many
 browser quirks. It has been adapted for use as an `@import` into a site's
 stylesheet, and compiled in using [SASSC][].  A standalone version is
 generated for sites where the entirety of the source markup is out of my hands.
-The project also requires use of Compass, but is not making much use of it yet.
 
 The project comes with a git hook, which has to be symlinked into the .git
 directory to be used
