@@ -3,13 +3,12 @@
 /* =============================================================================
    Mixins
    ========================================================================== */
-$base-font-size: 15px !default; // otherwise inherited from _sizing
+$base-font-size: 15px !default; // otherwise inherited from _rem
 $text-color: #333 !default;
 $background-color: #ccc !default;
 $lh: 1.2rem !default; // line-height unit, in rem
 
-@import "sizing";
-@import "compass";
+@import "rem";
 
 %italic {
   font-style: italic;
@@ -59,7 +58,7 @@ audio:not([controls]) {
  *    user zoom.
  */
 html {
-  font-size: percentage( $base-font-size / $baseFontSize ); /* 1 */
+  font-size: percentage( $base-font-size / $browser-default-font-size ); /* 1 */
   -webkit-text-size-adjust: 100%;                           /* 2 */
   -ms-text-size-adjust: 100%;                               /* 2 */
   font-family: sans-serif;
@@ -136,37 +135,37 @@ a {
 h1 {
   @include rem( font-size, 1.5*$lh );
   @include rem( line-height, 1.5*$lh );
-  @include rem( margin, 1*$lh 0 1.5*$lh );
+  @include rem( margin, 1*$lh 0px 0.5*$lh );
 }
 
 h2 {
   @include rem( font-size, 5/4*$lh );
   @include rem( line-height, 1.5*$lh );
-  @include rem( margin, 1*$lh 0 1.5*$lh );
+  @include rem( margin, 1*$lh 0px 0.5*$lh );
 }
 
 h3 {
   @include rem( font-size, 1.16667rem );
   @include rem( line-height, 1.5*$lh );
-  @include rem( margin, 1*$lh 0 1.5*$lh );
+  @include rem( margin, 1*$lh 0px 1.5*$lh );
 }
 
 h4 {
   @include rem( font-size, 5/6*$lh );
   @include rem( line-height, 1.5*$lh );
-  @include rem( margin, 1*$lh 0 1.5*$lh );
+  @include rem( margin, 1*$lh 0px 1.5*$lh );
 }
 
 h5 {
   @include rem( font-size, 25/36*$lh );
   @include rem( line-height, 1.5*$lh );
-  @include rem( margin, 1*$lh 0 1.5*$lh );
+  @include rem( margin, 1*$lh 0px 1.5*$lh );
 }
 
 h6 {
   @include rem( font-size, 24/15*$lh );
   @include rem( line-height, 1.5*$lh );
-  @include rem( margin, $lh 0 1.5*$lh);
+  @include rem( margin, $lh 0px 1.5*$lh);
 }
 
 /*
@@ -177,10 +176,10 @@ abbr[title] {
   border-bottom: 1px dotted; }
 
 blockquote {
-  @include rem( margin, $lh 0 );
-  @include rem( padding, 0 0 0 .5*$lh);
-  border: 0;
-  @include rem( border-left, .5*$lh solid $background-color );
+  @include rem( margin, $lh 0px );
+  @include rem( padding, 0px 0px 0px .5*$lh);
+  border: 0 solid $background-color;
+  @include rem( border-left-width, .5*$lh );
 }
 
 /**
@@ -207,12 +206,12 @@ mark {
  */
 
 p, pre {
-  @include rem( margin, $lh 0);
+  @include rem( margin, $lh 0px );
 }
 
 p {
-  @include hyphens(auto);
-  @include word-break(normal);
+  hyphens: auto;
+  word-break: normal;
 }
 
 /*
@@ -222,7 +221,7 @@ p {
 code, kbd, pre, samp {
   font-family: monospace, serif;
   _font-family: 'courier new', monospace;
-  @include rem( margin, $lh 0);
+  @include rem( margin, $lh 0px );
 }
 
 em {
@@ -299,7 +298,7 @@ sub {
  */
 
 dl, menu, ol, ul {
-  @include rem( margin, $lh 0 );
+  @include rem( margin, $lh 0px );
 }
 
 dt {
@@ -307,7 +306,7 @@ dt {
 }
 
 dd {
-  @include rem( margin, 0 0 $lh $lh );
+  @include rem( margin, 0px 0px $lh $lh );
 }
 
 /*
@@ -317,7 +316,7 @@ dd {
 menu, ol, ul {
   list-style-position: outside;
 
-  @include rem( padding, 0 0 0 $lh );
+  @include rem( padding, 0px 0px 0px $lh );
 }
 
 ol {
@@ -341,7 +340,7 @@ ul {
 }
 
 li {
-  @include rem( margin, $lh 0 );
+  @include rem( margin, $lh 0px );
 }
 
 nav {
@@ -402,7 +401,7 @@ figure, form {
  */
 fieldset {
   border: 1px solid #c0c0c0;
-  margin: 0 2px;
+  margin: 0px 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
