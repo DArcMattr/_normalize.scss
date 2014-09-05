@@ -10,10 +10,6 @@ $lh: 1.2rem !default; // line-height unit, in rem
 
 @import "assets/_rem.scss";
 
-%italic {
-  font-style: italic;
-}
-
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -21,16 +17,33 @@ $lh: 1.2rem !default; // line-height unit, in rem
 /*
  * Corrects `block` display not defined in IE 6/7/8/9 & Firefox 3.
  */
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
-  display: block; }
+article,
+ aside,
+ details,
+ figcaption,
+ figure,
+ footer,
+ header,
+ hgroup,
+ main,
+ nav,
+section,
+summary {
+  display: block;
+}
 
 /*
  * Corrects `inline-block` display not defined in IE 6/7/8/9 & Firefox 3.
  */
-audio, canvas, video {
+audio,
+canvas,
+progress,
+video {
   display: inline-block;
+  vertical-align: baseline;
   *display: inline;
-  *zoom: 1; }
+  *zoom: 1;
+}
 
 /*
  * Prevents modern browsers from displaying `audio` without controls.
@@ -38,14 +51,16 @@ audio, canvas, video {
  */
 audio:not([controls]) {
   display: none;
-  height: 0; }
+  height: 0;
+}
 
 /*
  * Addresses styling for `hidden` attribute not present in IE 7/8/9, Firefox 3, Safari 4.
  * Known issue: no IE 6 support.
  */
-[hidden] {
-  display: none; }
+[hidden], template {
+  display: none;
+}
 
 /* ==========================================================================
    Base
@@ -74,12 +89,22 @@ button, input[type=submit], select {
   font-family: sans-serif;
 }
 
+/*
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8+, and Opera
+ * Correct `select` style inheritance in Firefox.
+ */
+button, select {
+  text-transform: none;
+}
+
 input, textarea {
   font-family: monospace;
 }
 
 /*
- * Addresses margins handled incorrectly in IE 6/7.
+ * Remove default margin.
  */
 body {
   margin: 0;
@@ -178,7 +203,7 @@ abbr[title] {
 blockquote {
   @include rem( margin, $lh 0px );
   @include rem( padding, 0px 0px 0px .5*$lh);
-  border: 0 solid $background-color;
+  border: 0 solid lighten( $text-color, 20% );
   @include rem( border-left-width, .5*$lh );
 }
 
@@ -215,35 +240,40 @@ p {
 }
 
 /*
- * Corrects font family set oddly in IE 6, Safari 4/5, Chrome.
+ * 1. Corrects font family set oddly in IE 6, Safari 4/5, Chrome.
+ * 2. Address odd `em`-unit font size rendering in all browsers.
  */
 
 code, kbd, pre, samp {
-  font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
+  font-family: monospace, monospace;      /* 1 */
+  _font-family: 'courier new', monospace; /* 1 */
+  @include rem( font-size, 1rem );        /* 2 */
   @include rem( margin, $lh 0px );
 }
 
 em {
-  @extend %italic;
-  letter-spacing: .5px;
+  font-style: italic;
+  letter-spacing: .5px; /* my own personal preference */
 }
 
-cite, i {
-  @extend %italic;
+cite, i, dfn {
+  font-style: italic;
 }
 
 strong, b {
   font-weight: 700;
 }
+
 /*
  * Improves readability of pre-formatted text in all browsers.
+ * Contain overflow in all browsers
  */
 
 pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
+  overflow: auto;
 }
 
 /*
@@ -270,7 +300,7 @@ small {
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
 
-sub {
+sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -278,10 +308,6 @@ sub {
 }
 
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
   top: -0.5em;
 }
 
@@ -392,43 +418,51 @@ svg:not(:root) {
  * + Corrects margin displayed oddly in IE 6/7.
  */
 
-figure, form {
+form {
   margin: 0;
 }
+
+figure {
+  @include rem( margin, $lh 2*$lh  )
+}
+
 
 /*
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid lighten( $text-color, 20% );
   margin: 0px 2px;
-  padding: 0.35em 0.625em 0.75em;
+  @include rem( padding, 0.35rem 0.625rem 0.75rem );
 }
 
 /*
  * 1. Corrects color not being inherited in IE 6/7/8/9.
  * 2. Corrects text not wrapping in Firefox 3.
  * 3. Corrects alignment displayed oddly in IE 6/7.
+ * 4. Allows for IE 8 to line-wrap too.
+ *    @link http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
  */
 legend {
   border: 0;           /* 1 */
   padding: 0;
   white-space: normal; /* 2 */
   *margin-left: -7px;  /* 3 */
-  display:table;       /* 4 */
+  display: table;      /* 4 */
 }
 /*
- * 1. Corrects font size not being inherited in all browsers.
+ * 1. Corrects font properties not being inherited in all browsers.
  * 2. Addresses margins set differently in IE 6/7, Firefox 3+, Safari 5, Chrome.
  * 3. Improves appearance and consistency in all browsers.
- * 4. Enable line-wrapping in IE8+, from
- *      http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
+ * 4. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
  */
 button, input, select, textarea {
-  font-size: 100%;          /* 1 */
+  font: inherit;            /* 1 */
   margin: 0;                /* 2 */
   vertical-align: baseline; /* 3 */
   *vertical-align: middle;  /* 3 */
+  color: inherit;           /* 4 */
 }
 
 /*
@@ -470,17 +504,20 @@ input {
   }
 }
 
-/*
- * A. Re-set default cursor for disabled elements.
- */
-button[disabled] {
-  cursor: default;  /* A. */
+button, html input {
+  /*
+   * A. Re-set default cursor for disabled elements.
+   */
+  &[disabled] {
+    cursor: default;  /* A. */
+  }
 }
 
 input {
-  &[disabled] {
-    cursor: default; /* A. */
-  }
+  /*
+   * Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
+   */
+  line-height: normal;
   /*
    * 1. Addresses box sizing set to content-box in IE 8/9.
    * 2. Removes excess padding in IE 8/9.
@@ -492,6 +529,16 @@ input {
     padding: 0;             /* 2 */
     *height: 13px;          /* 3 */
     *width: 13px;           /* 3 */
+  }
+  /*
+   * Fix the cursor style for WebKit's increment/decrement buttons. For certain
+   * `font-size` values of the `input`, it causes the cursor style of the
+   * decrement button to change from `default` to `text`.
+   */
+  &[type="number"] {
+    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+      height: auto;
+    }
   }
   /*
    * 1. Addresses `appearance` set to `searchfield` in Safari 5, Chrome.
@@ -515,9 +562,11 @@ input {
 /*
  * Removes inner padding and border in Firefox 3+.
  */
-button::-moz-focus-inner, input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+button, input {
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
 }
 
 /*
@@ -527,6 +576,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 textarea {
   overflow: auto;      /* 1 */
   vertical-align: top; /* 2 */
+}
+
+/*
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+
+optgroup {
+  font-weight: 700;
 }
 
 /* ==========================================================================
@@ -539,6 +597,10 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
 }
 
 iframe {
