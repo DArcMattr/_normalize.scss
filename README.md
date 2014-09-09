@@ -1,4 +1,4 @@
-# `_normalize.scss` v1.2.0
+# `_normalize.scss` v2.1.0
 
 `_normalize.scss` is a customisable SASS file that makes browsers render all
 elements more consistently and in line with modern standards--derived from
@@ -19,28 +19,33 @@ the styles that need normalizing.
 ## How to use it
 
 I intend `_normalize.scss` to be used as a declaration of many default styles
-that I use in Ayn Rand Institute web projects, and for working around many
+that I used in Ayn Rand Institute web projects, and for working around many
 browser quirks. It has been adapted for use as an `@import` into a site's
-stylesheet, and compiled in using [SASSC][].  A standalone version is
-generated for sites where the entirety of the source markup is out of my hands.
-
-The project comes with a git hook, which has to be symlinked into the .git
-directory to be used
-
-    ln ./git_hooks/post-merge ./.git/hooks/post-merge
+stylesheet, and compiled in using [Sass][], and is using a subset of Sass that
+can be compiled by [Sassc][]. A [gulp.js][] recipe for making a standalone
+version is provided, if you wish to make a standalone version.
 
 ## Dependencies:
 
-* A [make][] utility, currently tested on Mac OS X
-* [SASSC][]
-* [SVGO][], a NodeJS utility used to optimize SVG files
+[Gulp.js][], which in turn requires [Node.JS][]. Install Node.JS via your
+operating system's package manager, and install gulp.js globally:
+
+    sudo npm install -g gulp
+
+Then for this project, once cloned, install the necessary local NPM modules
+for handling the various gulp tasks by running:
+
+    cd {project install folder}
+    npm install
 
 ## For the future
 
 This file is becoming less of a Normalize styles, and more of a "framework", as
 my opinions about the margins/padding and base appearance of some links are
-creeping in. A future re-sync with Necolas' project is planned, but will be
-quite selective.
+creeping in. A re-sync with Necolas' project is underway. What is left is
+registering this project with Bower and other front-end package managers, which
+may necessitate a name change, since this project has deviated from its origins
+in significant ways.
 
 ### From Nicholas Gallagher (necolas):
 
@@ -77,6 +82,7 @@ Gallagher][] and [Jonathan Neal][].
 [Jonathan Neal]: http://github.com/jonathantneal
 [Nicolas Gallagher]: http://github.com/necolas
 [issue guidelines]: https://github.com/necolas/issue-guidelines
-[SASSC]: https://github.com/hcatlin/sassc
+[Sass]: https://sass-lang.com
+[Sassc]: https://github.com/sass/sassc
 [make]: http://en.wikipedia.org/wiki/Make_(software)
-[SVGO]: https://github.com/svg/svgo
+[Watchman]: https://facebook.github.io/watchman/
