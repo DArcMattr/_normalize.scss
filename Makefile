@@ -17,3 +17,7 @@ $(target): $(prereqs)
 clean:
 	@echo "deleting"
 	@-rm -f $(target) $(target).map
+
+watch:
+	watchman watch $(shell pwd)
+	watchman -- trigger $(shell pwd) remake *.css -- make clean normalize.css
