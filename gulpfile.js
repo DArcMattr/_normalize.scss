@@ -1,6 +1,7 @@
 var
   gulp = require('gulp'),
   cssBase64 = require('gulp-css-base64'),
+  del = require('del'),
   minifycss = require('gulp-minify-css'),
   rename = require('gulp-rename'),
   sass = require('gulp-sass'),
@@ -10,7 +11,7 @@ gulp.task('clean', function(cb) {
   del(['normalize.css','normalize.css.map'], cb);
 });
 
-gulp.task('styles', function() {
+gulp.task('styles', ['clean'], function() {
   return gulp.src('normalize.scss')
     .pipe(sass())
     .pipe(cssBase64({
