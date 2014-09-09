@@ -1,6 +1,6 @@
 {
   "name": "_normalize.scss",
-  "version": "0.0.0",
+  "version": "2.1.0",
   "description": "Sass version of Normalize.css, customized with some more defaults",
   "main": "gulpfile.js",
   "dependencies": {
