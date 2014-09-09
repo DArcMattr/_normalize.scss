@@ -1,4 +1,4 @@
-/*! v1.2.0, based on normalize.css v1.0.0 | MIT License | git.io/normalize */
+/*! v2.1.0, based on normalize.css v3.0.1 | MIT License | git.io/normalize */
 
 /* =============================================================================
    Mixins
@@ -18,15 +18,15 @@ $lh: 1.2rem !default; // line-height unit, in rem
  * Corrects `block` display not defined in IE 6/7/8/9 & Firefox 3.
  */
 article,
- aside,
- details,
- figcaption,
- figure,
- footer,
- header,
- hgroup,
- main,
- nav,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
 section,
 summary {
   display: block;
@@ -124,6 +124,7 @@ a {
   &:active, &:hover {
     outline: 0;
   }
+  /* TODO: introduce more filetype icons, and split off into another file */
   &[href$=pdf] { /*! SVG from http://jozef89.deviantart.com/art/Free-document-icons-445521778 */
     position: relative;
     @include rem( padding-right, 1.06666667rem );
