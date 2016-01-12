@@ -1,21 +1,25 @@
 {
   "name": "_normalize.scss",
-  "version": "0.0.0",
+  "version": "1.3.0",
   "description": "Sass version of Normalize.css, customized with some more defaults",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "~3.8.8",
-    "gulp-css-base64": "~1.2.5"
-  },
+  "files": [
+    "_normalize.scss",
+    "README.md",
+    "LICENSE.md",
+    "package.json",
+    "assets/",
+    "test.html"
+  ],
   "devDependencies": {
-    "gulp-watch": "^1.0.2",
-    "gulp-minify-css": "^0.3.8",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^0.7.3",
-    "gulp-changed": "^1.0.0",
-    "del": "^0.1.3"
+    "clean-css": "3.4.9",
+    "css-b64-images": "0.2.5",
+    "node-sass": "3.4.2",
+    "nodemon": "1.8.1"
   },
   "scripts": {
+    "build": "css-b64-images ./_normalize.scss > _normalize-inlined.scss.tmp && node-sass --output-style=compressed --source-map=true _normalize.inlined.scss normalize.css && rm _normalize-inlined.scss.tmp",
+    "install": "npm run build-sass",
+    "watch": "nodemon -e scss -w ./*.scss -x 'npm run build'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,9 +31,11 @@
     "normalize"
   ],
   "author": "Necolas",
-  "license": "ISC",
+  "main": "_normalize.scss",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/DArcMattr/_normalize.scss/issues"
   },
-  "homepage": "https://github.com/DArcMattr/_normalize.scss"
+  "homepage": "https://github.com/DArcMattr/_normalize.scss",
+  "dependencies": {}
 }
