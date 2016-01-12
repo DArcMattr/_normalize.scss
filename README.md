@@ -1,4 +1,4 @@
-# `_normalize.scss` v2.1.0
+# `_normalize.scss` v2.2.0
 
 `_normalize.scss` is a customisable SASS file that makes browsers render all
 elements more consistently and in line with modern standards--derived from
