@@ -17,8 +17,10 @@
     "nodemon": "1.8.1"
   },
   "scripts": {
-    "build": "css-b64-images ./_normalize.scss > _normalize-inlined.scss.tmp && node-sass --output-style=compressed --source-map=true _normalize.inlined.scss normalize.css && rm _normalize-inlined.scss.tmp",
-    "install": "npm run build-sass",
+    "build": "npm run inline-images && node-sass --output-style=compressed --source-map=true _normalize-inlined.scss.tmp normalize.css && npm run clean",
+    "inline-images": "css-b64-images _normalize.scss > _normalize-inlined.scss.tmp",
+    "clean": "rm _normalize-inlined.scss.tmp",
+    "install": "npm run build",
     "watch": "nodemon -e scss -w ./*.scss -x 'npm run build'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
