@@ -1,6 +1,6 @@
 {
   "name": "darcmattr-normalize-scss",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Sass version of normalize.css, with typographic vertical rhythm",
   "style": "normalize.css",
   "files": [
