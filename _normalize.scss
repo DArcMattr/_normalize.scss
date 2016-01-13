@@ -24,8 +24,8 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 main,
+menu,
 nav,
 section,
 summary {
@@ -458,7 +458,7 @@ legend {
  * 4. Correct color not being inherited.
  *    Known issue: affects color of disabled elements.
  */
-button, input, select, textarea {
+button, input, optgroup, select, textarea {
   font: inherit;            /* 1 */
   margin: 0;                /* 2 */
   vertical-align: baseline; /* 3 */
@@ -491,6 +491,10 @@ label {
   @extend .pointy;
 }
 
+button {
+  overflow: visible; /* 4 */
+}
+
 button, html input[type="button"] /* 1 */ {
   -webkit-appearance: button;     /* 2 */
   @extend .pointy;                /* 3 */
@@ -502,6 +506,17 @@ input {
     -webkit-appearance: button; /* 2 */
     @extend .pointy;            /* 3 */
     *overflow: visible;         /* 4 */
+  }
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button,
+input {
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
   }
 }
 
