@@ -6,7 +6,7 @@ Nicholas Gallagher's `Normalize.css` project. It is the result of researching th
 differences between default browser styles in order to precisely target only
 the styles that need normalizing.
 
-[Check out the demo](http://darcmattr.github.io/_normalize.scss/test.html)
+[Check out the demo](https://darcmattr.github.io/_normalize.scss/test.html)
 
 ## What does it do?
 
@@ -21,16 +21,24 @@ the styles that need normalizing.
 I intend `_normalize.scss` to be used as a declaration of many default styles
 that I used in Ayn Rand Institute web projects, and for working around many
 browser quirks. It has been adapted for use as an `@import` into a site's
-stylesheet, and compiled in using [Sass][], and is using a subset of Sass that
-can be compiled by [Sassc][]. A [gulp.js][] recipe for making a standalone
-version is provided, if you wish to make a standalone version.
+stylesheet, and compiled in using [Sass][], using a subset of Sass that can be
+compiled by [libsass][]. An `npm` build script for making a standalone version
+is provided, if you wish to make a standalone version.
+
+The following variables are used throughout the code, and you can override them
+in your own loader stylesheets:
+
+```SCSS
+$base-font-size: 15px !default; // otherwise inherited from _rem library
+$text-color: #333 !default;
+$background-color: #ccc !default;
+$lh: 1.2rem !default; // line-height unit, in rem
+```
 
 ## Dependencies:
 
-[Gulp.js][], which in turn requires [Node.JS][]. Install Node.JS via your
-operating system's package manager, and install gulp.js globally:
-
-    sudo npm install -g gulp
+[Node.JS][] and its package manager, [npm][]. Install Node.JS via whatever
+method you choose (too much to list here, bleh).
 
 Then for this project, once cloned, install the necessary local NPM modules
 for handling the various gulp tasks by running:
@@ -40,12 +48,10 @@ for handling the various gulp tasks by running:
 
 ## For the future
 
-This file is becoming less of a Normalize styles, and more of a "framework", as
-my opinions about the margins/padding and base appearance of some links are
-creeping in. A re-sync with Necolas' project is underway. What is left is
-registering this project with Bower and other front-end package managers, which
-may necessitate a name change, since this project has deviated from its origins
-in significant ways.
+This file is becoming less of a normalizer, and more of a "framework", as my
+opinions about the margins/padding and base appearance of some links are
+creeping in. I re-sync with Necolas' project whenever I judge that another
+default is needed.
 
 ### From Nicholas Gallagher (necolas):
 
@@ -83,7 +89,6 @@ Gallagher][] and [Jonathan Neal][].
 [Nicolas Gallagher]: http://github.com/necolas
 [issue guidelines]: https://github.com/necolas/issue-guidelines
 [Sass]: https://sass-lang.com
-[Sassc]: https://github.com/sass/sassc
-[gulp.js]: http://gulpjs.com
-[make]: http://en.wikipedia.org/wiki/Make_(software)
-[Watchman]: https://facebook.github.io/watchman/
+[libsass]: http://sass-lang.com/libsass
+[Node.JS]: https://nodejs.org/
+[npm]: https://www.npmjs.com/
