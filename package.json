@@ -14,7 +14,7 @@
   ],
   "devDependencies": {
     "css-b64-images": "^0.2.5",
-    "node-sass": "^3.4.2",
+    "node-sass": "^4.14.1",
     "nodemon": "^1.8.1"
   },
   "scripts": {
