@@ -12,6 +12,11 @@
     "assets/",
     "test.html"
   ],
+  "nodemonConfig": {
+    "watch": ".",
+    "ext": "scss",
+    "exec": "npm run build"
+  },
   "devDependencies": {
     "css-b64-images": "^0.2.5",
     "node-sass": "^4.14.1",
@@ -22,7 +27,7 @@
     "inline-images": "css-b64-images _normalize.scss > _normalize-inlined.scss.tmp",
     "clean": "rm _normalize-inlined.scss.tmp",
     "install": "npm run build",
-    "watch": "nodemon -e scss -w . -x 'npm run build'",
+    "watch": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
