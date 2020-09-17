@@ -1,6 +1,6 @@
-# `_normalize.scss` v2.2.0
+# `_normalize.scss` v2.2.1
 
-`_normalize.scss` is a customisable SASS file that makes browsers render all
+`_normalize.scss` is a customisable Sass file that makes browsers render all
 elements more consistently and in line with modern standards--derived from
 Nicholas Gallagher's `Normalize.css` project. It is the result of researching the
 differences between default browser styles in order to precisely target only
@@ -29,10 +29,11 @@ The following variables are used throughout the code, and you can override them
 in your own loader stylesheets:
 
 ```SCSS
-$base-font-size: 15px !default; // otherwise inherited from _rem library
+$base-font-size: 16px !default; // otherwise inherited from _rem library
 $text-color: #333 !default;
 $background-color: #ccc !default;
-$lh: 1.2rem !default; // line-height unit, in rem
+$line-height-multiplier: 1.2 !default;
+$lh: $line-height-multiplier * 1rem !default;
 ```
 
 ## Dependencies:
@@ -40,18 +41,14 @@ $lh: 1.2rem !default; // line-height unit, in rem
 [Node.JS][] and its package manager, [npm][]. Install Node.JS via whatever
 method you choose (too much to list here, bleh).
 
-Then for this project, once cloned, install the necessary local NPM modules
-for handling the various gulp tasks by running:
-
-    cd {project install folder}
-    npm install
+Running `npm install` in the project directory will also build the CSS.
 
 ## For the future
 
 This file is becoming less of a normalizer, and more of a "framework", as my
 opinions about the margins/padding and base appearance of some links are
 creeping in. I re-sync with Necolas' project whenever I judge that another
-default is needed.
+default or cleanup is needed.
 
 ### From Nicholas Gallagher (necolas):
 
