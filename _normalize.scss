@@ -1,8 +1,8 @@
 /*! v2.2.1, based on normalize.css v3.0.1 | MIT License | git.io/normalize */
 
 /* =============================================================================
-   Mixins
-   ========================================================================== */
+Mixins
+========================================================================== */
 $base-font-size: 16px !default; // otherwise inherited from _rem
 $text-color: #333 !default;
 $background-color: #ccc !default;
@@ -12,8 +12,8 @@ $lh: $line-height-multiplier * 1rem !default;
 @import "assets/_rem.scss";
 
 /* ==========================================================================
-   HTML5 display definitions
-   ========================================================================== */
+HTML5 display definitions
+========================================================================== */
 
 /*
  * Corrects `block` display not defined in IE 6/7/8/9 & Firefox 3.
@@ -30,7 +30,7 @@ main,
 nav,
 section,
 summary {
-  display: block;
+	display: block;
 }
 
 /*
@@ -40,10 +40,10 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block;
-  vertical-align: baseline;
-  *display: inline;
-  *zoom: 1;
+	display: inline-block;
+	vertical-align: baseline;
+	*display: inline;
+	*zoom: 1;
 }
 
 /*
@@ -51,21 +51,22 @@ video {
  * Remove excess height in iOS5 devices.
  */
 audio:not([controls]) {
-  display: none;
-  height: 0;
+	display: none;
+	height: 0;
 }
 
 /*
  * Addresses styling for `hidden` attribute not present in IE 7/8/9, Firefox 3, Safari 4.
  * Known issue: no IE 6 support.
  */
-[hidden], template {
-  display: none;
+[hidden],
+template {
+	display: none;
 }
 
 /* ==========================================================================
-   Base
-   ========================================================================== */
+Base
+========================================================================== */
 
 /*
  * 1. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
@@ -74,20 +75,22 @@ audio:not([controls]) {
  *    user zoom.
  */
 html {
-  font-size: percentage( $base-font-size / $browser-default-font-size ); /* 1 */
-  -webkit-text-size-adjust: 100%;                           /* 2 */
-  -ms-text-size-adjust: 100%;                               /* 2 */
-  font-family: sans-serif;
-  color: $text-color;
-  background-color: $background-color;
+	font-size: percentage( $base-font-size / $browser-default-font-size ); /* 1 */
+	-webkit-text-size-adjust: 100%;                           /* 2 */
+	-ms-text-size-adjust: 100%;                               /* 2 */
+	font-family: sans-serif;
+	color: $text-color;
+	background-color: $background-color;
 }
 
 /*
  * Addresses `font-family` inconsistency between `textarea` and other form
  * elements.
  */
-button, input[type=submit], select {
-  font-family: sans-serif;
+button,
+input[type=submit],
+select {
+	font-family: sans-serif;
 }
 
 /*
@@ -96,54 +99,56 @@ button, input[type=submit], select {
  * Correct `button` style inheritance in Firefox, IE 8+, and Opera
  * Correct `select` style inheritance in Firefox.
  */
-button, select {
-  text-transform: none;
+button,
+select {
+	text-transform: none;
 }
 
-input, textarea {
-  font-family: monospace;
+input,
+textarea {
+	font-family: monospace;
 }
 
 /*
  * Remove default margin.
  */
 body {
-  margin: 0;
+	margin: 0;
 }
 
 /* ==========================================================================
-   Links
-   ========================================================================== */
+Links
+========================================================================== */
 
 /*
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
 a {
-  &:focus {
-    outline: thin dotted;
-  }
-  &:active, &:hover {
-    outline: 0;
-  }
-  /* TODO: introduce more filetype icons, and split off into another file */
-  &[href$=pdf] { /*! SVG from http://jozef89.deviantart.com/art/Free-document-icons-445521778 */
-    position: relative;
-    @include rem( padding-right, 1.06666667rem );
-    &:after {
-      content: "";
-      position: absolute;
-      right: 0;
-      display: inline-block;
-      @include rem( height, 1.06666667rem );
-      @include rem( width,  1.06666667rem );
-      padding: 0;
-      margin: 0;
-      background-image: url('assets/file-icon-pdf.svg');
-      background-position: 0 0;
-      background-repeat: no-repeat;
-      background-size: 100%;
-    }
-  }
+	&:focus {
+		outline: thin dotted;
+	}
+	&:active, &:hover {
+		outline: 0;
+	}
+	/* TODO: introduce more filetype icons, and split off into another file */
+	&[href$=pdf] { /*! SVG from http://jozef89.deviantart.com/art/Free-document-icons-445521778 */
+		position: relative;
+		@include rem( padding-right, 1.06666667rem );
+		&:after {
+			content: "";
+			position: absolute;
+			right: 0;
+			display: inline-block;
+			@include rem( height, 1.06666667rem );
+			@include rem( width,  1.06666667rem );
+			padding: 0;
+			margin: 0;
+			background-image: url('assets/file-icon-pdf.svg');
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+	}
 }
 
 /*
@@ -151,8 +156,8 @@ a {
  */
 
 /* ==========================================================================
-   Typography
-   ========================================================================== */
+Typography
+========================================================================== */
 
 /*
  * Addresses font sizes and margins set differently in IE 6/7.
@@ -160,39 +165,39 @@ a {
  */
 
 h1 {
-  @include rem( font-size, 1.5*$lh );
-  @include rem( line-height, 1.5*$lh );
-  @include rem( margin, 1*$lh 0px 0.5*$lh );
+	@include rem( font-size, 1.5*$lh );
+	@include rem( line-height, 1.5*$lh );
+	@include rem( margin, 1*$lh 0px 0.5*$lh );
 }
 
 h2 {
-  @include rem( font-size, 5/4*$lh );
-  @include rem( line-height, 1.5*$lh );
-  @include rem( margin, 1*$lh 0px 0.5*$lh );
+	@include rem( font-size, 5/4*$lh );
+	@include rem( line-height, 1.5*$lh );
+	@include rem( margin, 1*$lh 0px 0.5*$lh );
 }
 
 h3 {
-  @include rem( font-size, 1.16667rem );
-  @include rem( line-height, 1.5*$lh );
-  @include rem( margin, 1*$lh 0px 1.5*$lh );
+	@include rem( font-size, 1.16667rem );
+	@include rem( line-height, 1.5*$lh );
+	@include rem( margin, 1*$lh 0px 1.5*$lh );
 }
 
 h4 {
-  @include rem( font-size, 5/6*$lh );
-  @include rem( line-height, 1.5*$lh );
-  @include rem( margin, 1*$lh 0px 1.5*$lh );
+	@include rem( font-size, 5/6*$lh );
+	@include rem( line-height, 1.5*$lh );
+	@include rem( margin, 1*$lh 0px 1.5*$lh );
 }
 
 h5 {
-  @include rem( font-size, 25/36*$lh );
-  @include rem( line-height, 1.5*$lh );
-  @include rem( margin, 1*$lh 0px 1.5*$lh );
+	@include rem( font-size, 25/36*$lh );
+	@include rem( line-height, 1.5*$lh );
+	@include rem( margin, 1*$lh 0px 1.5*$lh );
 }
 
 h6 {
-  @include rem( font-size, 24/15*$lh );
-  @include rem( line-height, 1.5*$lh );
-  @include rem( margin, $lh 0px 1.5*$lh);
+	@include rem( font-size, 24/15*$lh );
+	@include rem( line-height, 1.5*$lh );
+	@include rem( margin, $lh 0px 1.5*$lh);
 }
 
 /*
@@ -200,13 +205,13 @@ h6 {
  */
 
 abbr[title] {
-  border-bottom: 1px dotted; }
+border-bottom: 1px dotted; }
 
 blockquote {
-  @include rem( margin, $lh 0px );
-  @include rem( padding, 0px 0px 0px .5*$lh);
-  border: 0 solid lighten( $text-color, 20% );
-  @include rem( border-left-width, .5*$lh );
+	@include rem( margin, $lh 0px );
+	@include rem( padding, 0px 0px 0px .5*$lh);
+	border: 0 solid lighten( $text-color, 20% );
+	@include rem( border-left-width, .5*$lh );
 }
 
 /**
@@ -214,9 +219,9 @@ blockquote {
  */
 
 hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	height: 0;
 }
 
 /*
@@ -224,21 +229,22 @@ hr {
  */
 
 mark {
-  background-color: lighten( $background-color, 20% );
-  color:            darken( $text-color, 20% );
+	background-color: lighten( $background-color, 20% );
+	color:            darken( $text-color, 20% );
 }
 
 /*
  * Addresses margins set differently in IE 6/7.
  */
 
-p, pre {
-  @include rem( margin, $lh 0px );
+p,
+pre {
+	@include rem( margin, $lh 0px );
 }
 
 p {
-  hyphens: auto;
-  word-break: normal;
+	hyphens: auto;
+	word-break: normal;
 }
 
 /*
@@ -246,24 +252,30 @@ p {
  * 2. Address odd `em`-unit font size rendering in all browsers.
  */
 
-code, kbd, pre, samp {
-  font-family: monospace, monospace;      /* 1 */
-  _font-family: 'courier new', monospace; /* 1 */
-  @include rem( font-size, 1rem );        /* 2 */
-  @include rem( margin, $lh 0px );
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;      /* 1 */
+	_font-family: 'courier new', monospace; /* 1 */
+	@include rem( font-size, 1rem );        /* 2 */
+	@include rem( margin, $lh 0px );
 }
 
 em {
-  font-style: italic;
-  letter-spacing: .5px; /* my own personal preference */
+	font-style: italic;
+	letter-spacing: .5px; /* my own personal preference */
 }
 
-cite, i, dfn {
-  font-style: italic;
+cite,
+i,
+dfn {
+	font-style: italic;
 }
 
-strong, b {
-  font-weight: 700;
+strong,
+b {
+	font-weight: 700;
 }
 
 /*
@@ -272,10 +284,10 @@ strong, b {
  */
 
 pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow: auto;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow: auto;
 }
 
 /*
@@ -283,11 +295,11 @@ pre {
  */
 
 q {
-  quotes: none;
-  &:before, &:after {
-    content: '';
-    content: none;
-  }
+	quotes: none;
+	&:before, &:after {
+		content: '';
+		content: none;
+	}
 }
 
 /*
@@ -295,38 +307,42 @@ q {
  */
 
 small {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
 
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 sup {
-  top: -0.5em;
+	top: -0.5em;
 }
 
 sub {
-  bottom: -0.25em;
+	bottom: -0.25em;
 }
 
 /* ==========================================================================
-   Lists
-   ========================================================================== */
+Lists
+========================================================================== */
 
 /*
  * Addresses margins set differently in IE 6/7.
  */
 
-dl, menu, ol, ul {
-  @include rem( margin, $lh 0px );
+dl,
+menu,
+ol,
+ul {
+	@include rem( margin, $lh 0px );
 }
 
 dt {
@@ -334,48 +350,50 @@ dt {
 }
 
 dd {
-  @include rem( margin, 0px 0px $lh $lh );
+	@include rem( margin, 0px 0px $lh $lh );
 }
 
 /*
  * Addresses paddings set differently in IE 6/7.
  */
 
-menu, ol, ul {
-  list-style-position: outside;
+menu,
+ol,
+ul {
+	list-style-position: outside;
 
-  @include rem( padding, 0px 0px 0px $lh );
+	@include rem( padding, 0px 0px 0px $lh );
 }
 
 ol {
-  list-style-type: decimal;
-  ol {
-    list-style-type: upper-alpha;
-    ol {
-      list-style-type: lower-alpha;
-    }
-  }
+	list-style-type: decimal;
+	ol {
+		list-style-type: upper-alpha;
+		ol {
+			list-style-type: lower-alpha;
+		}
+	}
 }
 
 ul {
-  list-style-type: disc;
-  ul {
-    list-style-type: square;
-    ul {
-      list-style-type: circle;
-    }
-  }
+	list-style-type: disc;
+	ul {
+		list-style-type: square;
+		ul {
+			list-style-type: circle;
+		}
+	}
 }
 
 li {
-  @include rem( margin, $lh 0px );
+	@include rem( margin, $lh 0px );
 }
 
 nav {
-  li {
-    list-style: none;
-    margin: 0;
-  }
+	li {
+		list-style: none;
+		margin: 0;
+	}
 }
 
 /*
@@ -383,15 +401,16 @@ nav {
  */
 
 nav {
-  ul, ol {
-    list-style: none;
-    list-style-image: none;
-  }
+	ul,
+	ol {
+		list-style: none;
+		list-style-image: none;
+	}
 }
 
 /* ==========================================================================
-   Embedded content
-   ========================================================================== */
+Embedded content
+========================================================================== */
 
 /*
  * 1. Removes border when inside `a` element in IE 6/7/8/9, Firefox 3.
@@ -399,8 +418,8 @@ nav {
  */
 
 img {
-  border: 0; /* 1 */
-  -ms-interpolation-mode: bicubic; /* 2 */
+	border: 0; /* 1 */
+	-ms-interpolation-mode: bicubic; /* 2 */
 }
 
 /*
@@ -408,12 +427,12 @@ img {
  */
 
 svg:not(:root) {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 /* ==========================================================================
-   Figures & Forms
-   ========================================================================== */
+Figures & Forms
+========================================================================== */
 
 /*
  * Addresses margin not present in IE 6/7/8/9, Safari 5, Opera 11.
@@ -421,11 +440,11 @@ svg:not(:root) {
  */
 
 form {
-  margin: 0;
+	margin: 0;
 }
 
 figure {
-  @include rem( margin, $lh 2*$lh  )
+	@include rem( margin, $lh 2*$lh  )
 }
 
 
@@ -433,9 +452,9 @@ figure {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid lighten( $text-color, 20% );
-  margin: 0px 2px;
-  @include rem( padding, 0.35rem 0.625rem 0.75rem );
+	border: 1px solid lighten( $text-color, 20% );
+	margin: 0px 2px;
+	@include rem( padding, 0.35rem 0.625rem 0.75rem );
 }
 
 /*
@@ -446,11 +465,11 @@ fieldset {
  *    @link http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
  */
 legend {
-  border: 0;           /* 1 */
-  padding: 0;
-  white-space: normal; /* 2 */
-  *margin-left: -7px;  /* 3 */
-  display: table;      /* 4 */
+	border: 0;           /* 1 */
+	padding: 0;
+	white-space: normal; /* 2 */
+	*margin-left: -7px;  /* 3 */
+	display: table;      /* 4 */
 }
 /*
  * 1. Corrects font properties not being inherited in all browsers.
@@ -459,20 +478,24 @@ legend {
  * 4. Correct color not being inherited.
  *    Known issue: affects color of disabled elements.
  */
-button, input, select, textarea {
-  font: inherit;            /* 1 */
-  margin: 0;                /* 2 */
-  vertical-align: baseline; /* 3 */
-  *vertical-align: middle;  /* 3 */
-  color: inherit;           /* 4 */
+button,
+input,
+select,
+textarea {
+	font: inherit;            /* 1 */
+	margin: 0;                /* 2 */
+	vertical-align: baseline; /* 3 */
+	*vertical-align: middle;  /* 3 */
+	color: inherit;           /* 4 */
 }
 
 /*
  * Addresses Firefox 3/4 setting `line-height` on `input` using `!important` in the
  * UA stylesheet.
  */
-button, input {
-  line-height: normal;
+button,
+input {
+	line-height: normal;
 }
 
 /*
@@ -485,90 +508,93 @@ button, input {
  *    Known issue: inner spacing remains in IE 6.
  */
 .pointy {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 label {
-  @extend .pointy;
+	@extend .pointy;
 }
 
-button, html input[type="button"] /* 1 */ {
-  -webkit-appearance: button;     /* 2 */
-  @extend .pointy;                /* 3 */
-  *overflow: visible;             /* 4 */
-}
-
-input {
-  &[type="reset"], &[type="submit"] {
-    -webkit-appearance: button; /* 2 */
-    @extend .pointy;            /* 3 */
-    *overflow: visible;         /* 4 */
-  }
-}
-
-button, html input {
-  /*
-   * A. Re-set default cursor for disabled elements.
-   */
-  &[disabled] {
-    cursor: default;  /* A. */
-  }
+button,
+html input[type="button"] /* 1 */ {
+	-webkit-appearance: button;     /* 2 */
+	@extend .pointy;                /* 3 */
+	*overflow: visible;             /* 4 */
 }
 
 input {
-  /*
-   * Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
-   */
-  line-height: normal;
-  /*
-   * 1. Addresses box sizing set to content-box in IE 8/9.
-   * 2. Removes excess padding in IE 8/9.
-   * 3. Removes excess padding in IE 7.
-   *    Known issue: excess padding remains in IE 6.
-   */
-  &[type="checkbox"], &[type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0;             /* 2 */
-    *height: 13px;          /* 3 */
-    *width: 13px;           /* 3 */
-  }
-  /*
-   * Fix the cursor style for WebKit's increment/decrement buttons. For certain
-   * `font-size` values of the `input`, it causes the cursor style of the
-   * decrement button to change from `default` to `text`.
-   */
-  &[type="number"] {
-    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
-      height: auto;
-    }
-  }
-  /*
-   * 1. Addresses `appearance` set to `searchfield` in Safari 5, Chrome.
-   * 2. Addresses `box-sizing` set to `border-box` in Safari 5, Chrome (include `-moz`
-   *    to future-proof).
-   */
-  &[type="search"] {
-    -webkit-appearance: textfield;   /* 1 */
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; /* 2 */
-    box-sizing: content-box;
-    /*
-     * Removes inner padding and search cancel button in Safari 5, Chrome on OS X.
-     */
-    &::-webkit-search-cancel-button, &::-webkit-search-decoration {
-      -webkit-appearance: none;
-    }
+	&[type="reset"], &[type="submit"] {
+		-webkit-appearance: button; /* 2 */
+		@extend .pointy;            /* 3 */
+		*overflow: visible;         /* 4 */
+	}
+}
+
+button,
+html input {
+	/*
+	 * A. Re-set default cursor for disabled elements.
+	 */
+&[disabled] {
+	cursor: default;  /* A. */
+}
+}
+
+input {
+	/*
+	 * Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
+	 */
+line-height: normal;
+/*
+ * 1. Addresses box sizing set to content-box in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ * 3. Removes excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+&[type="checkbox"], &[type="radio"] {
+	box-sizing: border-box; /* 1 */
+	padding: 0;             /* 2 */
+			 *height: 13px;          /* 3 */
+			 *width: 13px;           /* 3 */
+		 }
+		 /*
+		  * Fix the cursor style for WebKit's increment/decrement buttons. For certain
+		  * `font-size` values of the `input`, it causes the cursor style of the
+		  * decrement button to change from `default` to `text`.
+		  */
+&[type="number"] {
+	&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+		height: auto;
+	}
+}
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5, Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5, Chrome (include `-moz`
+ *    to future-proof).
+ */
+&[type="search"] {
+	-webkit-appearance: textfield;   /* 1 */
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box; /* 2 */
+	box-sizing: content-box;
+	/*
+	 * Removes inner padding and search cancel button in Safari 5, Chrome on OS X.
+	 */
+&::-webkit-search-cancel-button, &::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
   }
 }
 
 /*
  * Removes inner padding and border in Firefox 3+.
  */
-button, input {
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
+button,
+input {
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
 }
 
 /*
@@ -576,8 +602,8 @@ button, input {
  * 2. Improves readability and alignment in all browsers.
  */
 textarea {
-  overflow: auto;      /* 1 */
-  vertical-align: top; /* 2 */
+	overflow: auto;      /* 1 */
+	vertical-align: top; /* 2 */
 }
 
 /*
@@ -586,25 +612,26 @@ textarea {
  */
 
 optgroup {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 /* ==========================================================================
-   Tables
-   ========================================================================== */
+Tables
+========================================================================== */
 
 /*
  * Remove most spacing between table cells.
  */
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-td, th {
-  padding: 0;
+td,
+th {
+	padding: 0;
 }
 
 iframe {
-  border: 0;
+	border: 0;
 }
