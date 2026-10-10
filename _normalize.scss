@@ -4,12 +4,15 @@
 Mixins
 ========================================================================== */
 $base-font-size: 16px !default; // otherwise inherited from _rem
+$browser-default-font-size: 16px;
 $text-color: #333 !default;
 $background-color: #ccc !default;
 $line-height-multiplier: 1.2 !default;
 $lh: $line-height-multiplier * 1rem !default;
 
-@import "assets/_rem.scss";
+@use "assets/_rem.scss" as rem;
+@use "sass:color";
+@use "sass:math";
 
 /* ==========================================================================
 HTML5 display definitions
@@ -75,7 +78,7 @@ Base
  *    user zoom.
  */
 html {
-	font-size: percentage( $base-font-size / $browser-default-font-size ); /* 1 */
+	font-size: math.percentage( math.div($base-font-size, $browser-default-font-size) ); /* 1 */
 	-webkit-text-size-adjust: 100%;                           /* 2 */
 	-ms-text-size-adjust: 100%;                               /* 2 */
 	font-family: sans-serif;
@@ -133,14 +136,14 @@ a {
 	/* TODO: introduce more filetype icons, and split off into another file */
 	&[href$=pdf] { /*! SVG from http://jozef89.deviantart.com/art/Free-document-icons-445521778 */
 		position: relative;
-		@include rem( padding-right, 1.06666667rem );
+		@include rem.rem( padding-right, 1.06666667rem );
 		&:after {
 			content: "";
 			position: absolute;
 			right: 0;
 			display: inline-block;
-			@include rem( height, 1.06666667rem );
-			@include rem( width,  1.06666667rem );
+			@include rem.rem( height, 1.06666667rem );
+			@include rem.rem( width,  1.06666667rem );
 			padding: 0;
 			margin: 0;
 			background-image: url('assets/file-icon-pdf.svg');
@@ -165,39 +168,39 @@ Typography
  */
 
 h1 {
-	@include rem( font-size, 1.5*$lh );
-	@include rem( line-height, 1.5*$lh );
-	@include rem( margin, 1*$lh 0px 0.5*$lh );
+	@include rem.rem( font-size, 1.5*$lh );
+	@include rem.rem( line-height, 1.5*$lh );
+	@include rem.rem( margin, 1*$lh 0px 0.5*$lh );
 }
 
 h2 {
-	@include rem( font-size, 5/4*$lh );
-	@include rem( line-height, 1.5*$lh );
-	@include rem( margin, 1*$lh 0px 0.5*$lh );
+	@include rem.rem( font-size, math.div(5, 4)*$lh );
+	@include rem.rem( line-height, 1.5*$lh );
+	@include rem.rem( margin, 1*$lh 0px 0.5*$lh );
 }
 
 h3 {
-	@include rem( font-size, 1.16667rem );
-	@include rem( line-height, 1.5*$lh );
-	@include rem( margin, 1*$lh 0px 1.5*$lh );
+	@include rem.rem( font-size, 1.16667rem );
+	@include rem.rem( line-height, 1.5*$lh );
+	@include rem.rem( margin, 1*$lh 0px 1.5*$lh );
 }
 
 h4 {
-	@include rem( font-size, 5/6*$lh );
-	@include rem( line-height, 1.5*$lh );
-	@include rem( margin, 1*$lh 0px 1.5*$lh );
+	@include rem.rem( font-size, math.div(5, 6)*$lh );
+	@include rem.rem( line-height, 1.5*$lh );
+	@include rem.rem( margin, 1*$lh 0px 1.5*$lh );
 }
 
 h5 {
-	@include rem( font-size, 25/36*$lh );
-	@include rem( line-height, 1.5*$lh );
-	@include rem( margin, 1*$lh 0px 1.5*$lh );
+	@include rem.rem( font-size, math.div(25, 36)*$lh );
+	@include rem.rem( line-height, 1.5*$lh );
+	@include rem.rem( margin, 1*$lh 0px 1.5*$lh );
 }
 
 h6 {
-	@include rem( font-size, 24/15*$lh );
-	@include rem( line-height, 1.5*$lh );
-	@include rem( margin, $lh 0px 1.5*$lh);
+	@include rem.rem( font-size, math.div(24, 15)*$lh );
+	@include rem.rem( line-height, 1.5*$lh );
+	@include rem.rem( margin, $lh 0px 1.5*$lh);
 }
 
 /*
@@ -208,10 +211,10 @@ abbr[title] {
 border-bottom: 1px dotted; }
 
 blockquote {
-	@include rem( margin, $lh 0px );
-	@include rem( padding, 0px 0px 0px .5*$lh);
-	border: 0 solid lighten( $text-color, 20% );
-	@include rem( border-left-width, .5*$lh );
+	@include rem.rem( margin, $lh 0px );
+	@include rem.rem( padding, 0px 0px 0px .5*$lh);
+	border: 0 solid color.adjust( $text-color, $lightness:20%, $space:oklch );
+	@include rem.rem( border-left-width, .5*$lh );
 }
 
 /**
@@ -229,8 +232,8 @@ hr {
  */
 
 mark {
-	background-color: lighten( $background-color, 20% );
-	color:            darken( $text-color, 20% );
+	background-color: color.adjust( $background-color, $lightness:20%, $space:oklch );
+	color:            color.adjust( $text-color, $lightness:-20%, $space:oklch );
 }
 
 /*
@@ -239,7 +242,7 @@ mark {
 
 p,
 pre {
-	@include rem( margin, $lh 0px );
+	@include rem.rem( margin, $lh 0px );
 }
 
 p {
@@ -258,8 +261,8 @@ pre,
 samp {
 	font-family: monospace, monospace;      /* 1 */
 	_font-family: 'courier new', monospace; /* 1 */
-	@include rem( font-size, 1rem );        /* 2 */
-	@include rem( margin, $lh 0px );
+	@include rem.rem( font-size, 1rem );        /* 2 */
+	@include rem.rem( margin, $lh 0px );
 }
 
 em {
@@ -342,7 +345,7 @@ dl,
 menu,
 ol,
 ul {
-	@include rem( margin, $lh 0px );
+	@include rem.rem( margin, $lh 0px );
 }
 
 dt {
@@ -350,7 +353,7 @@ dt {
 }
 
 dd {
-	@include rem( margin, 0px 0px $lh $lh );
+	@include rem.rem( margin, 0px 0px $lh $lh );
 }
 
 /*
@@ -362,7 +365,7 @@ ol,
 ul {
 	list-style-position: outside;
 
-	@include rem( padding, 0px 0px 0px $lh );
+	@include rem.rem( padding, 0px 0px 0px $lh );
 }
 
 ol {
@@ -386,7 +389,7 @@ ul {
 }
 
 li {
-	@include rem( margin, $lh 0px );
+	@include rem.rem( margin, $lh 0px );
 }
 
 nav {
@@ -444,7 +447,7 @@ form {
 }
 
 figure {
-	@include rem( margin, $lh 2*$lh  )
+	@include rem.rem( margin, $lh 2*$lh  )
 }
 
 
@@ -452,9 +455,9 @@ figure {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-	border: 1px solid lighten( $text-color, 20% );
+	border: 1px solid color.adjust( $text-color, $lightness:20%, $space:oklch );
 	margin: 0px 2px;
-	@include rem( padding, 0.35rem 0.625rem 0.75rem );
+	@include rem.rem( padding, 0.35rem 0.625rem 0.75rem );
 }
 
 /*

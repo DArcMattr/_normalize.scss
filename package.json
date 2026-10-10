@@ -19,14 +19,13 @@
   },
   "devDependencies": {
     "css-b64-images": "^0.2.5",
-    "node-sass": "^4.14.1",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "sass": "^1.105.1"
   },
   "scripts": {
-    "build": "npm run inline-images && node-sass --output-style=compressed --source-map=true _normalize-inlined.scss.tmp normalize.css && npm run clean",
+    "build": "pnpm run inline-images && sass --style=compressed --source-map _normalize-inlined.scss.tmp normalize.css && pnpm run clean",
     "inline-images": "css-b64-images _normalize.scss > _normalize-inlined.scss.tmp",
     "clean": "rm _normalize-inlined.scss.tmp",
-    "install": "npm run build",
     "watch": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

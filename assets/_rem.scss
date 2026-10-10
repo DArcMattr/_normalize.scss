@@ -1,5 +1,8 @@
 // from https://github.com/ry5n/rem, commit
 // 281dea4f468c531542d41254abf032f039538ef8
+@use "sass:list";
+@use "sass:math";
+@use "sass:meta";
 
 // @private Default font-size for all browsers
 $browser-default-font-size: 16px;
@@ -13,31 +16,31 @@ $rem-with-px-fallback: true !default;
 
 // Convert any CSS <length> or <percentage> value to any other.
 @function convert-length($length, $to-unit, $from-context: $base-font-size, $to-context: $from-context) {
-	$from-unit: unit($length);
+	$from-unit: math.unit($length);
 
 	// Optimize for cases where from and to may accidentally be the same.
 	@if $from-unit == $to-unit { @return $length; }
-	@if unit($from-context) != 'px' { @warn "Paremeter $from-context must resolve to a value in pixel units."; }
-	@if unit($to-context) != 'px' { @warn "Parameter $to-context must resolve to a value in pixel units."; }
+	@if math.unit($from-context) != 'px' { @warn "Paremeter $from-context must resolve to a value in pixel units."; }
+	@if math.unit($to-context) != 'px' { @warn "Parameter $to-context must resolve to a value in pixel units."; }
 
 	// Fixed ratios
 	// https://developer.mozilla.org/en/CSS/length
 	// http://dev.w3.org/csswg/css3-values/#absolute-lengths
-	$px-per-in: 96px / 1in;
-	$px-per-mm: 96px / 25.4mm;
-	$px-per-cm: 96px / 2.54cm;
-	$px-per-pt: 4px / 3pt;
-	$px-per-pc: 16px / 1pc;
+	$px-per-in: math.div(96px, 1in);
+	$px-per-mm: math.div(96px, 25.4mm);
+	$px-per-cm: math.div(96px, 2.54cm);
+	$px-per-pt: math.div(4px, 3pt);
+	$px-per-pc: math.div(16px, 1pc);
 
 	// Variables to store actual convesion ratios
 	$px-per-from-unit: 1;
 	$px-per-to-unit: 1;
 
 	@if $from-unit != 'px' {
-		@if      $from-unit == 'em'  { $px-per-from-unit: $from-context / 1em }
-		@else if $from-unit == 'rem' { $px-per-from-unit: $base-font-size / 1rem }
-		@else if $from-unit == '%'   { $px-per-from-unit: $from-context / 100% }
-		@else if $from-unit == 'ex'  { $px-per-from-unit: $from-context / 2ex }
+		@if      $from-unit == 'em'  { $px-per-from-unit: math.div($from-context, 1em) }
+		@else if $from-unit == 'rem' { $px-per-from-unit: math.div($base-font-size, 1rem) }
+		@else if $from-unit == '%'   { $px-per-from-unit: math.div($from-context, 100%) }
+		@else if $from-unit == 'ex'  { $px-per-from-unit: math.div($from-context, 2ex) }
 		@else if $from-unit == 'in'  { $px-per-from-unit: $px-per-in }
 		@else if $from-unit == 'mm'  { $px-per-from-unit: $px-per-mm }
 		@else if $from-unit == 'cm'  { $px-per-from-unit: $px-per-cm }
@@ -54,10 +57,10 @@ $rem-with-px-fallback: true !default;
 	}
 
 	@if $to-unit != 'px' {
-		@if      $to-unit == 'em'  { $px-per-to-unit: $to-context / 1em }
-		@else if $to-unit == 'rem' { $px-per-to-unit: $base-font-size / 1rem }
-		@else if $to-unit == '%'   { $px-per-to-unit: $to-context / 100% }
-		@else if $to-unit == 'ex'  { $px-per-to-unit: $to-context / 2ex }
+		@if      $to-unit == 'em'  { $px-per-to-unit: math.div($to-context, 1em) }
+		@else if $to-unit == 'rem' { $px-per-to-unit: math.div($base-font-size, 1rem) }
+		@else if $to-unit == '%'   { $px-per-to-unit: math.div($to-context, 100%) }
+		@else if $to-unit == 'ex'  { $px-per-to-unit: math.div($to-context, 2ex) }
 		@else if $to-unit == 'in'  { $px-per-to-unit: $px-per-in }
 		@else if $to-unit == 'mm'  { $px-per-to-unit: $px-per-mm }
 		@else if $to-unit == 'cm'  { $px-per-to-unit: $px-per-cm }
@@ -72,7 +75,7 @@ $rem-with-px-fallback: true !default;
 			@return $length;
 		}
 	}
-	@return $length * $px-per-from-unit / $px-per-to-unit;
+	@return $length * math.div($px-per-from-unit, $px-per-to-unit);
 }
 
 // For the given property, use rem units with px as a fallback value for older
@@ -88,8 +91,8 @@ $rem-with-px-fallback: true !default;
 	$rem-values: ();
 
 	// Ensure $values is a list.
-	@if type-of($values) != 'list' {
-		$values: join((), $values);
+	@if meta.type-of($values) != 'list' {
+		$values: list.join((), $values);
 	}
 
 	// Loop through the $values list
@@ -97,19 +100,19 @@ $rem-with-px-fallback: true !default;
 		// For each property value, if it's in rem or px, derive both rem and
 		// px values for it and add those to the end of the appropriate buffer.
 		// Ensure all pixel values are rounded to the nearest pixel.
-		@if type-of($value) == number and not unitless($value) and (unit($value) == px or unit($value) == rem) {
-			@if unit($value) == px {
-				$px-values: join($px-values, round($value));
-				$rem-values: join($rem-values, convert-length($value, rem));
+		@if meta.type-of($value) == number and not math.is-unitless($value) and (math.unit($value) == px or math.unit($value) == rem) {
+			@if math.unit($value) == px {
+				$px-values: list.join($px-values, math.round($value));
+				$rem-values: list.join($rem-values, convert-length($value, rem));
 			}
 			@else {
-				$px-values: join($px-values, round(convert-length($value, px)));
-				$rem-values: join($rem-values, $value);
+				$px-values: list.join($px-values, math.round(convert-length($value, px)));
+				$rem-values: list.join($rem-values, $value);
 			}
 		}
 		@else {
-			$px-values: join($px-values, $value);
-			$rem-values: join($rem-values, $value);
+			$px-values: list.join($px-values, $value);
+			$rem-values: list.join($rem-values, $value);
 		}
 	}
 
